@@ -9,16 +9,13 @@ const PORTFOLIO_DATA = {
     title: "Data Integration Specialist | Ex-Amazon Analyst",
     subtitle: "Data Integration Specialist @ Virtual Employee | Ex- Automation Analyst & Pricing Data Analyst @ Amazon",
     bio: "Experienced data professional with over 8 years of expertise in the e-commerce industry, specializing in analyzing price trends, manipulating pricing data, building automated ETL pipelines, and collaborating with retail teams to determine optimal pricing strategies, rebates, and shipping. Proven track record in executing major sale events resulting in significant revenue growth.",
-    location: "Bengaluru, Karnataka, India",
-    email: "jeevandeep.paila@gmail.com",
-    phone: "+91 9559554884",
+    location: "Bengaluru & Bhubaneswar, India",
     status: "Available for high-impact Data Science & Integration roles",
     cvLink: "./resume.pdf",
     socials: {
       github: "https://github.com/JeevanPaila",
       linkedin: "https://www.linkedin.com/in/jeevanpaila/",
-      whatsapp: "https://wa.me/919559554884/",
-      email: "mailto:jeevandeep.paila@gmail.com"
+      twitter: "https://x.com/jdpaila"
     }
   },
 
