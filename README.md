@@ -1,113 +1,69 @@
-# 🚀 Jeevan Paila — Personal Portfolio & AI Product Studio
+# Hi there, I'm Jeevan Paila 👋
 
-Official personal website, portfolio, and product studio showcase for **Jeevan Paila** — Data Integration Specialist at Virtual Employee Pvt. Ltd., former Automation Analyst & Pricing Analyst at Amazon, IISc Bangalore Postgraduate Alumnus, and Founder of **[Kognitec](https://kognitec.com)**.
+### Data Integration Specialist | Ex-Amazon Automation Analyst & Pricing Analyst | IISc Postgraduate Alumnus | Founder of [Kognitec](https://kognitec.com)
 
-🌐 **Live Application**: **[https://jeevanpaila.web.app](https://jeevanpaila.web.app)**  
-📦 **GitHub Repository**: **[`JeevanPaila/JeevanPaila`](https://github.com/JeevanPaila/JeevanPaila)**
-
----
-
-## 🌟 Key Application Features
-
-### 🎨 Liquid Glass UI & Dynamic Motion Aesthetic
-- **Frosted Glass Engine**: Custom CSS system built with `backdrop-filter: blur(16px)` and subtle glowing gradients.
-- **Directional Spotlight**: Glass border highlights automatically follow user cursor movement across all interactive cards.
-- **3D Pop-Out Avatar**: Interactive profile photo scaling up (`scale(1.25)`) and popping out of the top container boundary on hover while remaining anchored at the bottom edge.
-
-### 🌓 Automatic System Light/Dark Theme Engine
-- **Zero Manual Toggle**: Detects and responds automatically to visitor system preferences via `@media (prefers-color-scheme: light)`.
-- **Dark Mode Palette**: Deep Obsidian canvas (`#0B0F19`), Electric Indigo (`#6366F1`) & Violet (`#8B5CF6`) gradients, Emerald Mint (`#10B981`) badges, and Ice White typography (`#F9FAFB`).
-- **Light Mode Palette**: Frosted Porcelain canvas (`#F1F5F9`), Deep Sapphire Indigo (`#4F46E5` ➔ `#7C3AED`) gradients, Rich Emerald (`#059669`) accents, and Slate Charcoal text (`#0F172A`).
-
-### ⌨️ Dynamic Code Typewriter Title Animation
-- **Typography**: Powered by **[Geist Mono](https://fonts.google.com/specimen/Geist+Mono)** from Google Fonts.
-- **Role Sequence**: Continuously types and erases back through 5 core titles in a perpetual loop:
-  1. `Data Integration Specialist`
-  2. `Automation Analyst`
-  3. `Data Engineer`
-  4. `Data Scientist`
-  5. `Data Analyst`
-
-### 🔒 Anti-Bot Obfuscation & Contact Access Modal
-- **Zero Plaintext Contacts in Source**: Direct email and phone number are completely removed from HTML and `data.js`.
-- **Base64 Encrypted Tokens**: Stored as Base64 tokens in JS (`amVldmFuZGVlcC5wYWlsYUBnbWFpbC5jb20=`).
-- **Human Access Verification**: Unlocked only when a user solves a human math challenge (`c-ans`) inside the Liquid Glass Access Modal.
-- **Real-Time Inbox Delivery**: Integrated with zero-backend FormSubmit AJAX (`https://formsubmit.co/ajax/jeevandeep.paila@gmail.com`), delivering visitor messages and contact request alerts directly to Jeevan's inbox.
-
-### 🤖 Full SEO & AI Search Engine Indexing Architecture
-- **AI Crawler Optimization**: Explicitly allows AI search crawlers (`GPTBot`, `PerplexityBot`, `ClaudeBot`, `Anthropic-ai`, `Google-Extended`, `Applebot`, `Googlebot`, `Bingbot`) in [`robots.txt`](file:///x:/JeevanPaila/jeevanpaila.com/robots.txt).
-- **XML Sitemap**: Declares all tab sections in [`sitemap.xml`](file:///x:/JeevanPaila/jeevanpaila.com/sitemap.xml).
-- **Rich JSON-LD Structured Data**: Embedded Schema.org `Person` and `ProfilePage` schemas (`schema.org`) linking career roles, IISc education, Kognitec products, and alternate names (`Jeevan Paila`, `Jeevan D. Paila`, `Jeevan Deep Paila`).
-- **Static Pre-Rendered Fallbacks**: Includes static semantic HTML fallbacks inside timeline containers for 100% indexing compatibility with non-JS crawlers.
+[![Website](https://img.shields.io/badge/Portfolio-jeevanpaila.web.app-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jeevanpaila.web.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-jeevanpaila-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeevanpaila/)
+[![Twitter / X](https://img.shields.io/badge/Twitter-jdpaila-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/jdpaila)
+[![Kognitec](https://img.shields.io/badge/Kognitec-Live_Product_Suite-10B981?style=for-the-badge&logo=rocket&logoColor=white)](https://kognitec.com)
 
 ---
 
-## 🛠 Technical Stack Architecture
+## 👨‍💻 About Me
 
-| Layer | Technology |
+- 📊 **8+ Years of Experience** in Data Integration, PySpark ETL Engineering, E-Commerce Price Intelligence, and Generative AI Systems.
+- 🏢 **Currently**: Data Integration Specialist at **Virtual Employee Pvt. Ltd.**, building Databricks PySpark pipelines, automated ML catalog categorization (97.5% accuracy), and executive PowerBI pricing portals.
+- 📦 **Ex-Amazon**: Former **Automation Analyst & Pricing Data Analyst at Amazon**, managing a 20-analyst team, engineering promotion/rebate tracking systems (90% error reduction), and co-launching **Amazon-NL**.
+- 🎓 **Education**: Postgraduate Degree in **Computational Data Science from Indian Institute of Science (IISc Bangalore)**.
+- 🚀 **Founder @ Kognitec**: Engineering enterprise AI platforms including **KogNote** (AI Web Clipper), **KogniRAG** (Enterprise Private Search), **KogniExtract** (Multimodal Document Parsing API), and **KogniBots** (Autonomous AI Agents).
+
+---
+
+## ⚡ What I Do & Core Specializations
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│  • Data Integration & ETL : Databricks, PySpark, REST APIs, JSON/XML   │
+│  • Generative AI & RAG    : RAG Architectures, Vector DBs, AI Agents    │
+│  • Retail Data Engineering: Price Intelligence, ML Cataloging, Scraping │
+│  • Business Analytics     : PowerBI, Tableau, KPI Dashboards, SQL       │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🛠 Tech Stack & Tooling
+
+| Domain | Technologies |
 | :--- | :--- |
-| **Core Structure** | HTML5 (Semantic markup + JSON-LD Schema.org) |
-| **Styling & Theme** | Vanilla CSS3 (Custom Design Tokens, Liquid Glass, OS Auto Theme Engine) |
-| **Typography** | **Geist Mono** & **Geist** (Google Fonts) |
-| **Logic & Interactivity** | Vanilla JavaScript (ES6+ Modules, Base64 Obfuscation, Typewriter Engine) |
-| **Iconography** | Ionicons v7.1.0 |
-| **Email Gateway** | FormSubmit AJAX Endpoint |
-| **Hosting & CDN** | Firebase Hosting (Global Edge CDN, SSL/TLS) |
+| **Languages** | `Python` • `SQL (PostgreSQL, MySQL, T-SQL)` • `PySpark SQL` • `BigQuery SQL` • `TypeScript` • `JavaScript` • `Regex` |
+| **Data Engineering** | `PySpark` • `Databricks` • `ETL / ELT Pipelines` • `REST APIs` • `JSON / XML Schema Mapping` • `Data Validation` |
+| **Generative AI & ML** | `Retrieval-Augmented Generation (RAG)` • `Vector DBs (Chroma, FAISS)` • `Autonomous AI Agents` • `NLP` • `Classification ML` |
+| **Analytics & BI** | `Microsoft PowerBI` • `Tableau` • `Retail Pricing & KPI Analytics` • `Competitor Web Scraping` • `Data Warehousing` |
+| **Tools & Infrastructure** | `Git & GitHub` • `Docker` • `Chrome Extension API (Manifest V3)` • `Linux Shell / PowerShell` • `Firebase` • `FastAPI` |
 
 ---
 
-## 📂 Repository Structure
+## 🚀 Active Product Suite — [Kognitec.com](https://kognitec.com)
 
-```
-JeevanPaila/
-├── index.html            # Main Single-Page Application & SEO Meta Head
-├── robots.txt            # AI Search & Search Engine Crawler Rules
-├── sitemap.xml           # XML Site Index for Google & Bing
-├── firebase.json         # Firebase Hosting Configuration
-├── .firebaserc           # Firebase Project Link (jeevanpaila)
-├── resume.pdf            # Downloadable Official Curriculum Vitae
-├── favicon.ico           # Application Avatar & Favicon Icon
-├── css/
-│   └── style.css         # Core Design System, Liquid Glass & Auto Light/Dark CSS
-└── js/
-    ├── data.js           # Centralized Data Store (Experience, Education, Projects, Skills, Ventures)
-    └── main.js           # Typewriter Engine, Navigation, Anti-Bot Modal & FormSubmit Handler
-```
+- 📝 **[KogNote AI](https://kognitec.com)** — AI-powered web clipper & knowledge synthesis browser platform.
+- 🔍 **[KogniRAG](https://kognitec.com)** — Enterprise-grade Retrieval-Augmented Generation search engine for private data.
+- 📄 **[KogniExtract](https://kognitec.com)** — High-precision API for automated invoice, table, and document data extraction.
+- 🤖 **[KogniBots](https://kognitec.com)** — Autonomous AI workflow agents for repetitive data processes.
 
 ---
 
-## 🚀 Local Development & Deployment
+## 📈 Featured Ventures & Projects
 
-### 1. Run Locally
-Serve the application using any static HTTP server (e.g. Python, Live Server, or Firebase CLI):
-
-```bash
-# Using Python
-python -m http.server 8000
-
-# Or using Firebase CLI
-npx firebase-tools serve
-```
-
-Open `http://localhost:8000` in your browser.
-
-### 2. Deploy to Firebase Hosting
-Deploy updates directly to production on Firebase Hosting:
-
-```bash
-npx firebase-tools deploy --only hosting
-```
+- **[Unboxful.com](https://unboxful.com)** — Next-gen e-commerce product discovery and competitive price intelligence engine.
+- **[IndiWize.com](https://indiwize.com)** — AI-powered market intelligence platform for Indian growth ecosystems.
+- **[HustleBase.com](https://hustlebase.com)** — Workspace productivity suite and workflow automation OS for independent creators.
 
 ---
 
-## 👨‍💻 Author & Contact
+## 📫 Connect with Me
 
-**Jeevan Paila**  
-*Data Integration Specialist @ Virtual Employee Pvt. Ltd.*  
-*Former Automation Analyst & Pricing Analyst @ Amazon*  
-*Founder @ [Kognitec](https://kognitec.com)*  
-
-- **Website**: [https://jeevanpaila.web.app](https://jeevanpaila.web.app)
-- **LinkedIn**: [https://www.linkedin.com/in/jeevanpaila/](https://www.linkedin.com/in/jeevanpaila/)
-- **GitHub**: [https://github.com/JeevanPaila](https://github.com/JeevanPaila)
-- **Twitter / X**: [https://x.com/jdpaila](https://x.com/jdpaila)
+- 🖥 **Personal Portfolio**: **[https://jeevanpaila.web.app](https://jeevanpaila.web.app)**
+- 👔 **LinkedIn**: **[linkedin.com/in/jeevanpaila](https://www.linkedin.com/in/jeevanpaila/)**
+- 🐦 **Twitter / X**: **[x.com/jdpaila](https://x.com/jdpaila)**
+- 🚀 **AI Product Suite**: **[kognitec.com](https://kognitec.com)**
