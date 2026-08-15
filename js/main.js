@@ -481,9 +481,9 @@ function initTypewriter() {
   let titleIndex = 0;
   let charIndex = titles[0].length;
   let isDeleting = false;
-  let typingSpeed = 80;    // ms per character typed
-  let deletingSpeed = 40;  // ms per character deleted
-  let delayAfterTyped = 2200; // ms to pause on completed title
+  let typingSpeed = 45;       // ms per character typed (fast typing)
+  let deletingSpeed = 25;     // ms per character deleted (fast erasing)
+  let delayAfterTyped = 1200; // ms to pause on completed title (1.2s switch)
 
   function typeStep() {
     const currentTitle = titles[titleIndex];
@@ -504,7 +504,7 @@ function initTypewriter() {
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       titleIndex = (titleIndex + 1) % titles.length;
-      nextSpeed = 300;
+      nextSpeed = 200;
     }
 
     setTimeout(typeStep, nextSpeed);
