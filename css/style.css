@@ -33,7 +33,7 @@
   --input-bg: rgba(255, 255, 255, 0.03);
   --input-border: rgba(255, 255, 255, 0.12);
 
-  --ff-poppins: 'Geist', 'Poppins', -apple-system, sans-serif;
+  --ff-poppins: 'Geist Mono', 'Geist', monospace;
   --ff-mono: 'Geist Mono', 'Fira Code', monospace;
 
   --fs-1: 32px;
@@ -121,7 +121,7 @@ input, textarea {
 }
 
 html {
-  font-family: var(--ff-poppins);
+  font-family: var(--ff-mono);
   scroll-behavior: smooth;
 }
 
