@@ -33,16 +33,15 @@ const PORTFOLIO_DATA = {
       company: "Virtual Employee Pvt. Ltd.",
       period: "Oct 2022 — Present",
       location: "Bengaluru, Karnataka, India",
-      summary: "Leading end-to-end data cleanup, robust ETL pipeline development, automated product categorization algorithms, and executive PowerBI analytics.",
+      summary: "Lead Data Integration Specialist driving enterprise data engineering, Databricks PySpark transformations, automated retail inventory classification, and executive PowerBI business intelligence.",
       achievements: [
-        "Developed and implemented robust ETL pipelines incorporating data cleanup and analysis to ensure high output precision.",
-        "Enhanced data quality by 32% using Python (Regex) and SQL for cleaning and preprocessing multi-source data.",
-        "Automated product categorization using advanced algorithms, achieving 97.5% accuracy and significantly reducing manual effort.",
-        "Created and optimized guardrails to improve resource prioritization and time management in a KPI-driven environment.",
-        "Utilized PowerBI to build interactive pricing dashboards analyzing trends and providing actionable insights to senior stakeholders.",
-        "Received, cleaned, and integrated diverse data formats (JSON, CSV, TSV, XML) into central repositories."
+        "Architected and deployed enterprise ETL/ELT pipelines with PySpark and Databricks, processing multi-source raw feeds (JSON, CSV, TSV, XML) into centralized data warehouses.",
+        "Enhanced pricing and catalog data quality by 32% using Python (Regex) and SQL for advanced preprocessing, anomaly detection, and schema validation.",
+        "Engineered automated product categorization algorithms leveraging machine learning and NLP, achieving 97.5% classification accuracy and eliminating hundreds of manual cataloging hours.",
+        "Designed resource prioritization guardrails and automated queue pipelines in a fast-paced KPI-driven environment.",
+        "Built executive PowerBI pricing dashboards tracking competitive trends, margin thresholds, and rebate performance for senior leadership."
       ],
-      skills: ["Python", "SQL", "ETL Pipelines", "PowerBI", "Regex", "JSON / XML Parsing", "Data Cleaning", "Data Integration"]
+      skills: ["PySpark", "Databricks", "Python", "SQL Query Tuning", "ETL Pipelines", "PowerBI", "Regex", "Data Cleaning", "Data Integration", "JSON/XML Schema Mapping"]
     },
     {
       id: "exp-2",
@@ -50,15 +49,15 @@ const PORTFOLIO_DATA = {
       company: "Amazon",
       period: "Dec 2020 — Oct 2022",
       location: "Bengaluru, Karnataka, India",
-      summary: "Managed cross-functional retail teams, led a 20-person team, optimized pricing/rebate systems, and supported the launch of Amazon-NL.",
+      summary: "Owned retail process automation, optimized pricing/rebate workflows, led a 20-person operations team, and supported the international launch of Amazon-NL.",
       achievements: [
-        "Collaborated with retail teams and internal/external stakeholders to optimize workflows, improving data processing efficiency by 26%.",
-        "Developed and maintained a centralized tracking system for shipping, rebate, delivery policy, and price changes, reducing errors by 90%.",
-        "Optimized data extraction performance using tuned SQL queries, achieving an average 1.5-hour reduction in query execution times.",
-        "Owned process-related projects, managing and training a team of 20 while adding key features to Amazon promotion and rebate tools.",
-        "Led a dynamic team shaping pricing strategies, rebate structures, and shipping policies, ensuring the successful launch of Amazon-NL."
+        "Collaborated with cross-functional retail teams and international stakeholders to optimize promotion workflows, improving operational data processing efficiency by 26%.",
+        "Engineered and maintained a centralized tracking system for shipping policies, rebate structures, delivery policy changes, and price adjustments, reducing tracking errors by 90%.",
+        "Optimized SQL data extraction queries, achieving an average 1.5-hour reduction in query execution times across heavy retail databases.",
+        "Managed, trained, and mentored a team of 20 analysts while owning critical software feature additions for internal Amazon promotion and rebate tools.",
+        "Co-led pricing and rebate strategy formulation for European retail operations, ensuring a flawless launch for Amazon-NL."
       ],
-      skills: ["Amazon Retail Systems", "SQL Query Optimization", "Automation Analytics", "Team Leadership", "Pricing & Rebates", "Process Improvement"]
+      skills: ["Amazon Retail Systems", "SQL Optimization", "Process Automation", "Team Leadership", "Pricing & Rebate Strategy", "E-Commerce Operations"]
     },
     {
       id: "exp-3",
@@ -66,13 +65,13 @@ const PORTFOLIO_DATA = {
       company: "Amazon",
       period: "May 2019 — Nov 2020",
       location: "Bengaluru, Karnataka, India",
-      summary: "Monitored European & American retail markets, automated competitor web scraping, and executed major sale campaigns.",
+      summary: "Monitored European and American retail markets, automated competitor web scraping pipelines, and validated pricing during major peak sale events.",
       achievements: [
-        "Implemented comprehensive data validation processes to ensure pricing data accuracy, reducing errors by 20%.",
-        "Automated competitor website web scraping and reporting to track price fluctuations during Black Friday, Prime Day, and Festival Sales.",
-        "Monitored and analyzed competitor activities across Europe and America regions to inform pricing, shipping, and rebate decisions."
+        "Implemented strict data validation algorithms to inspect competitor price feeds and promotional discounts, reducing data errors by 20%.",
+        "Automated multi-threaded web scraping engines and alert reporting tools to capture price fluctuations during Black Friday, Prime Day, and Festival Sale events.",
+        "Analyzed pricing trends and competitor shipping policies across Europe and North America to inform strategic pricing and discount decisions."
       ],
-      skills: ["Web Scraping", "Competitor Analysis", "Data Validation", "E-Commerce Pricing", "SQL", "Market Research"]
+      skills: ["Web Scraping Systems", "Competitor Price Intelligence", "Data Validation", "E-Commerce Pricing", "SQL Server", "Market Analysis"]
     },
     {
       id: "exp-4",
@@ -80,12 +79,12 @@ const PORTFOLIO_DATA = {
       company: "Sandeepana Academy",
       period: "Mar 2018 — Feb 2019",
       location: "Bhubaneswar, Odisha, India",
-      summary: "Built and managed company web applications, student SQL databases, and engagement analytics.",
+      summary: "Developed web applications, managed student database architecture, and engineered conversion analytics dashboards.",
       achievements: [
-        "Developed and executed the company website with traffic tracking, increasing engagement conversion rates by 150%.",
-        "Managed SQL databases for student and test-related records and created survey/result reporting dashboards."
+        "Designed and deployed the official institution website with integrated traffic analytics, boosting engagement conversion rates by 150%.",
+        "Managed MySQL databases for student records, test evaluations, and automated result reporting dashboards."
       ],
-      skills: ["Web Development", "SQL Databases", "Analytics Dashboards", "Conversion Optimization"]
+      skills: ["Web Development", "MySQL", "Analytics Dashboards", "Conversion Optimization", "JavaScript"]
     }
   ],
 
@@ -96,7 +95,7 @@ const PORTFOLIO_DATA = {
       institution: "Indian Institute of Science (IISc)",
       period: "Oct 2023 — Nov 2024",
       location: "Bengaluru, India",
-      details: "Advanced study in computational statistics, machine learning algorithms, big data processing, and data science methodology at India's premier research institute."
+      details: "Advanced curriculum covering computational statistics, machine learning theory, big data processing (PySpark), neural networks, and data science methodology at India's #1 ranked research institution."
     },
     {
       id: "edu-2",
@@ -104,7 +103,7 @@ const PORTFOLIO_DATA = {
       institution: "Bharath University",
       period: "2013 — 2017",
       location: "Chennai, India",
-      details: "Engineering foundation in automated systems, control engineering, data structures, and mathematical modeling."
+      details: "Engineering foundation in automated control systems, robotics programming, data structures, linear algebra, and mathematical modeling."
     }
   ],
 
@@ -137,9 +136,9 @@ const PORTFOLIO_DATA = {
       title: "KogNote AI & Intelligent Web Clipper",
       category: "ml",
       categoryName: "AI Apps & Extensions",
-      description: "AI-driven knowledge synthesis platform and browser extension extracting key entities, summaries, and action items from web content.",
+      description: "AI-driven knowledge synthesis platform and companion browser extension extracting key entities, summaries, and action items from web content.",
       highlights: [
-        "Shipped KogNote App and companion Chrome Web Clipper Extension.",
+        "Shipped KogNote Web Application and companion Chrome Web Clipper Extension.",
         "Engineered real-time browser text extraction and background LLM summarization.",
         "Implemented offline-first local storage and vector indexing."
       ],
