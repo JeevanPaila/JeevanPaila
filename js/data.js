@@ -121,6 +121,36 @@ const PORTFOLIO_DATA = {
 
   projects: [
     {
+      id: "proj-kognitec-rag",
+      title: "KogniRAG & KogniExtract — Enterprise AI & RAG Engine",
+      category: "ml",
+      categoryName: "Generative AI & RAG",
+      description: "Privacy-first Retrieval-Augmented Generation (RAG) and intelligent multimodal document extraction engine shipped under Kognitec.",
+      highlights: [
+        "Architected client-side and cloud-hybrid RAG pipelines for zero-leak enterprise search.",
+        "Built KogniExtract API for automated table, invoice, and unstructured document parsing.",
+        "Integrated Vector DBs (Chroma/FAISS) with custom embedding reranking."
+      ],
+      tech: ["Generative AI", "RAG Systems", "Vector DBs", "Python", "FastAPI", "NLP"],
+      github: "https://github.com/JeevanPaila",
+      demo: "https://kognitec.com"
+    },
+    {
+      id: "proj-kognote",
+      title: "KogNote AI & Intelligent Web Clipper",
+      category: "ml",
+      categoryName: "AI Apps & Extensions",
+      description: "AI-driven knowledge synthesis platform and browser extension extracting key entities, summaries, and action items from web content.",
+      highlights: [
+        "Shipped KogNote App and companion Chrome Web Clipper Extension.",
+        "Engineered real-time browser text extraction and background LLM summarization.",
+        "Implemented offline-first local storage and vector indexing."
+      ],
+      tech: ["Chrome Extension API", "Next.js", "Generative AI", "TypeScript", "Python"],
+      github: "https://github.com/JeevanPaila",
+      demo: "https://kognitec.com"
+    },
+    {
       id: "proj-1",
       title: "E-Commerce Competitor Price Scraping & Tracking Engine",
       category: "de",
@@ -185,27 +215,27 @@ const PORTFOLIO_DATA = {
   skills: {
     languages: [
       { name: "Python", level: 95 },
-      { name: "SQL (MySQL / SQL Server)", level: 94 },
-      { name: "R", level: 82 },
+      { name: "SQL (MySQL / SQL Server / BigQuery)", level: 94 },
+      { name: "TypeScript & JavaScript", level: 88 },
       { name: "Regex & Text Mining", level: 92 }
     ],
     mlAndAi: [
-      { name: "Machine Learning & Algorithms", level: 90 },
-      { name: "Statistical Data Analysis", level: 92 },
-      { name: "Product Categorization ML", level: 95 },
-      { name: "Mathematics for Data Science", level: 88 }
+      { name: "Generative AI & LLM Pipelines", level: 92 },
+      { name: "Enterprise RAG & Vector Search", level: 94 },
+      { name: "Autonomous AI Agents (KogniBots)", level: 90 },
+      { name: "Machine Learning & Product Categorization", level: 95 }
     ],
     dataEngineering: [
-      { name: "ETL / ELT Pipelines", level: 96 },
-      { name: "Data Integration (JSON, XML, CSV)", level: 95 },
-      { name: "Google BigQuery & SQL Tuning", level: 90 },
-      { name: "Data Validation & Quality", level: 94 }
+      { name: "ETL / ELT Pipelines & PySpark", level: 96 },
+      { name: "Data Integration (JSON, XML, Rest API)", level: 95 },
+      { name: "Intelligent Document Extraction (KogniExtract)", level: 92 },
+      { name: "Data Validation & Quality Assurance", level: 94 }
     ],
     cloudAndTools: [
+      { name: "Next.js & SaaS Infrastructure", level: 88 },
+      { name: "Chrome Extension API Architecture", level: 90 },
       { name: "Microsoft PowerBI & Tableau", level: 92 },
-      { name: "Google Analytics & Data Studio", level: 88 },
-      { name: "Jira & Agile / Scrum", level: 90 },
-      { name: "Git & Web Scraping Tools", level: 92 }
+      { name: "Git & Web Scraping Systems", level: 92 }
     ]
   },
 
@@ -216,10 +246,10 @@ const PORTFOLIO_DATA = {
       domain: "kognitec.com",
       url: "https://kognitec.com",
       status: "live",
-      statusLabel: "Live Product",
-      tagline: "Enterprise AI, Data Integration & Intelligent Automation Solutions",
-      description: "Architecting distributed cloud data pipelines, automated ETL workflows, custom generative AI integrations, and real-time decision engines for digital transformation.",
-      tech: ["Enterprise AI", "Data Integration", "PySpark", "Databricks", "Cloud Architecture"]
+      statusLabel: "Live Product Suite",
+      tagline: "Automate the Mundane. Engineer the Impossible.",
+      description: "Premium AI ecosystem and SaaS infrastructure. Ships flagship products including KogNote (AI Notes & Web Clipper), KogniRAG (Private Data Search), KogniExtract (Document Extraction), and KogniBots (Autonomous Workflow Agents).",
+      tech: ["Generative AI", "RAG Systems", "KogNote App", "Chrome Extension", "KogniBots", "Next.js"]
     },
     {
       id: "v-2",
