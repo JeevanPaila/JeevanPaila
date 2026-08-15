@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeevan Paila | Data Scientist & Data Integration Specialist</title>
+  <meta name="description" content="Portfolio of Jeevan Paila - Senior Data Integration Specialist and Data Scientist specializing in PySpark, Databricks, Enterprise Data Pipelines, ML Models, and Cloud Architecture.">
+  <meta name="keywords" content="Jeevan Paila, Data Scientist, Data Integration Specialist, PySpark, Databricks, Machine Learning, Data Engineer, Portfolio, Bengaluru">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Interactive Neural Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-brand">
+        <div class="nav-node-icon">
+          <ion-icon name="analytics-outline"></ion-icon>
+        </div>
+        <span>Jeevan Paila</span>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#metrics" class="nav-link">Impact</a>
+        <a href="#playground" class="nav-link">Data Lab</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Light/Dark Theme">
+          <ion-icon name="sunny-outline"></ion-icon>
+        </button>
+        <a id="github-link-nav" href="#" target="_blank" rel="noopener" class="icon-btn" title="GitHub Profile">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a id="linkedin-link-nav" href="#" target="_blank" rel="noopener" class="icon-btn" title="LinkedIn Profile">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a id="cv-btn-nav" href="#" class="btn btn-primary">
+          <ion-icon name="document-text-outline"></ion-icon> Resume
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main>
+    <!-- Hero Section -->
+    <section id="about" class="hero-section">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span id="status-pill">Available for high-impact Data Science roles</span>
+          </div>
+          <h1 class="hero-title">
+            Architecting <span class="gradient-text">Data Pipelines</span> & Predictive AI Systems
+          </h1>
+          <p class="hero-subtitle" id="hero-subtitle">
+            Senior Data Integration Specialist & Data Scientist with 5+ years of experience transforming big data into actionable intelligence.
+          </p>
+          <div class="hero-buttons">
+            <a href="#playground" class="btn btn-primary">
+              <ion-icon name="flask-outline"></ion-icon> Explore Data Lab
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <ion-icon name="grid-outline"></ion-icon> View Projects
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="data-sphere-container">
+            <div class="data-node-core">
+              <ion-icon name="hardware-chip-outline"></ion-icon>
+            </div>
+            <div class="floating-badge badge-1">
+              <ion-icon name="flash-outline"></ion-icon> PySpark ETL
+            </div>
+            <div class="floating-badge badge-2">
+              <ion-icon name="pulse-outline"></ion-icon> 99.8% Uptime
+            </div>
+            <div class="floating-badge badge-3">
+              <ion-icon name="git-network-outline"></ion-icon> ML Pipelines
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Metrics Section -->
+    <section id="metrics" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// PERFORMANCE & SCALE</span>
+          <h2 class="section-title">Measurable Business Impact</h2>
+        </div>
+        <div id="metrics-grid" class="metrics-grid"></div>
+      </div>
+    </section>
+
+    <!-- Interactive Data Science Playground -->
+    <section id="playground" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// INTERACTIVE EXPERIMENTATION</span>
+          <h2 class="section-title">Data Science & ML Playground</h2>
+        </div>
+
+        <div class="playground-container">
+          <!-- ML Model Simulator Box -->
+          <div class="glass-card sim-box reveal">
+            <h3><ion-icon name="analytics-outline" class="gradient-text"></ion-icon> Interactive Model Fitting Simulator</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">
+              Adjust hyperparameters in real-time to watch gradient descent fit linear regression parameters over synthetic data points.
+            </p>
+            <div class="sim-canvas-wrapper">
+              <canvas id="sim-canvas"></canvas>
+            </div>
+            <div class="sim-metrics-bar">
+              <div>MSE: <strong id="sim-mse" class="gradient-text">0.0000</strong></div>
+              <div>R² Score: <strong id="sim-r2" class="gradient-text">0%</strong></div>
+              <div>Slope (w): <strong id="sim-slope" class="gradient-text">0.000</strong></div>
+            </div>
+            <div class="sim-controls">
+              <div class="control-group">
+                <label>Learning Rate (α): <span id="sim-lr-val">0.05</span></label>
+                <input type="range" id="sim-lr-input" min="0.01" max="0.3" step="0.01" value="0.05">
+              </div>
+              <div class="control-group">
+                <label>Data Points (N): <span id="sim-pts-val">35</span></label>
+                <input type="range" id="sim-pts-input" min="15" max="80" step="5" value="35">
+              </div>
+              <div class="control-group">
+                <label>Epochs: <span id="sim-epochs-val">50</span></label>
+                <input type="range" id="sim-epochs-input" min="10" max="150" step="10" value="50">
+              </div>
+              <button id="sim-reset-btn" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; align-self: flex-end;">
+                <ion-icon name="refresh-outline"></ion-icon> Resample Points
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Data Pipeline Visualizer -->
+          <div class="glass-card reveal">
+            <h3><ion-icon name="git-network-outline" class="gradient-text"></ion-icon> End-to-End Enterprise Data Pipeline</h3>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">
+              Click any stage below to inspect the underlying architectural specifications and data governance policies.
+            </p>
+            <div class="pipeline-steps">
+              <div class="pipeline-step active" data-step="ingestion">
+                <div class="pipeline-step-info">
+                  <ion-icon name="cloud-download-outline" class="gradient-text"></ion-icon>
+                  <span>1. Data Ingestion & Streaming</span>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+              <div class="pipeline-step" data-step="transformation">
+                <div class="pipeline-step-info">
+                  <ion-icon name="flash-outline" class="gradient-text"></ion-icon>
+                  <span>2. PySpark ETL & Delta Lake</span>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+              <div class="pipeline-step" data-step="featurestore">
+                <div class="pipeline-step-info">
+                  <ion-icon name="server-outline" class="gradient-text"></ion-icon>
+                  <span>3. ML Feature Store & Governance</span>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+              <div class="pipeline-step" data-step="inference">
+                <div class="pipeline-step-info">
+                  <ion-icon name="hardware-chip-outline" class="gradient-text"></ion-icon>
+                  <span>4. Real-Time Model Inference</span>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+              <div class="pipeline-step" data-step="analytics">
+                <div class="pipeline-step-info">
+                  <ion-icon name="bar-chart-outline" class="gradient-text"></ion-icon>
+                  <span>5. Dashboards & BI Actions</span>
+                </div>
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+            </div>
+
+            <div class="pipeline-detail-card">
+              <h4 id="pipeline-detail-title">1. Data Ingestion & Streaming Layer</h4>
+              <p id="pipeline-detail-desc" style="font-size: 0.88rem; margin-top: 0.4rem; color: var(--text-secondary);">
+                Connects multi-cloud REST APIs, PostgreSQL DB replicas, Kafka streams, and IoT event logs into raw Bronze storage tables.
+              </p>
+              <div id="pipeline-detail-metrics" class="pipeline-detail-metrics">
+                • Latency: &lt;100ms | Ingestion Speed: 50,000 events/sec | Format: Parquet &amp; JSON
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// CAREER PATH</span>
+          <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div id="experience-timeline" class="timeline-container"></div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// PORTFOLIO SHOWCASE</span>
+          <h2 class="section-title">Featured Data Science Projects</h2>
+        </div>
+
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+          <button class="filter-btn" data-filter="de">Data Engineering</button>
+          <button class="filter-btn" data-filter="nlp">NLP &amp; LLMs</button>
+          <button class="filter-btn" data-filter="analytics">Analytics</button>
+        </div>
+
+        <div id="projects-grid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- Skills Matrix Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// TECHNICAL PROFICIENCY</span>
+          <h2 class="section-title">Skills &amp; Technology Stack</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="glass-card skill-group-card reveal">
+            <h3><ion-icon name="code-slash-outline"></ion-icon> Core Languages</h3>
+            <div id="skills-lang"></div>
+          </div>
+
+          <div class="glass-card skill-group-card reveal">
+            <h3><ion-icon name="hardware-chip-outline"></ion-icon> Machine Learning &amp; AI</h3>
+            <div id="skills-ml"></div>
+          </div>
+
+          <div class="glass-card skill-group-card reveal">
+            <h3><ion-icon name="cube-outline"></ion-icon> Data Engineering &amp; ETL</h3>
+            <div id="skills-de"></div>
+          </div>
+
+          <div class="glass-card skill-group-card reveal">
+            <h3><ion-icon name="cloud-outline"></ion-icon> Cloud &amp; MLOps Tools</h3>
+            <div id="skills-cloud"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Hub -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="glass-card contact-card reveal">
+          <span class="section-tag">// LET'S CONNECT</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p style="color: var(--text-secondary); margin-top: 0.8rem;">
+            Whether you have a data engineering challenge, an AI predictive project, or want to discuss opportunities, I'm always open to connecting.
+          </p>
+
+          <div class="contact-email-box">
+            <ion-icon name="mail-outline" class="gradient-text"></ion-icon>
+            <span id="contact-email">jeevandeep.paila@gmail.com</span>
+            <button id="copy-email-btn" class="copy-btn">
+              <ion-icon name="copy-outline"></ion-icon> Copy
+            </button>
+          </div>
+
+          <div class="social-links">
+            <a id="email-link-contact" href="#" class="btn btn-primary">
+              <ion-icon name="send-outline"></ion-icon> Send Email
+            </a>
+            <a id="whatsapp-link-contact" href="#" target="_blank" rel="noopener" class="btn btn-secondary">
+              <ion-icon name="logo-whatsapp"></ion-icon> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Jeevan Paila. Built with high performance &amp; tailored for Data Science.</p>
+      <div style="margin-top: 0.5rem;" class="social-links">
+        <a id="github-link-footer" href="#" target="_blank" rel="noopener" style="color: var(--text-muted);">GitHub</a> •
+        <a id="linkedin-link-footer" href="#" target="_blank" rel="noopener" style="color: var(--text-muted);">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./js/data.js"></script>
+  <script src="./js/canvas.js"></script>
+  <script src="./js/playground.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
