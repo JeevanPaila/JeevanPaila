@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Fallback execution if DOMContentLoaded already fired
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  setTimeout(renderAllData, 50);
+  setTimeout(() => {
+    renderAllData();
+    initTypewriter();
+  }, 50);
 }
 
 function getPortfolioData() {
@@ -467,9 +470,14 @@ function copyTextToClipboard(text, btn) {
 }
 
 // Dynamic Code Typewriter Animation for Sidebar Titles
+let typewriterStarted = false;
+
 function initTypewriter() {
+  if (typewriterStarted) return;
   const textEl = document.querySelector('.typewriter-text');
   if (!textEl) return;
+
+  typewriterStarted = true;
 
   const titles = [
     "Data Integration Specialist",
@@ -480,17 +488,17 @@ function initTypewriter() {
 
   let titleIndex = 0;
   let charIndex = titles[0].length;
-  let isDeleting = false;
-  let typingSpeed = 45;       // ms per character typed (fast typing)
-  let deletingSpeed = 25;     // ms per character deleted (fast erasing)
-  let delayAfterTyped = 1200; // ms to pause on completed title (1.2s switch)
+  let isDeleting = true;
+  let typingSpeed = 40;       // ms per char typed
+  let deletingSpeed = 20;     // ms per char deleted
+  let delayAfterTyped = 1500; // ms pause on full title
 
   function typeStep() {
     const currentTitle = titles[titleIndex];
 
     if (isDeleting) {
       charIndex--;
-      textEl.textContent = currentTitle.substring(0, charIndex);
+      textEl.textContent = currentTitle.substring(0, charIndex) || '\u00A0';
     } else {
       charIndex++;
       textEl.textContent = currentTitle.substring(0, charIndex);
@@ -498,17 +506,19 @@ function initTypewriter() {
 
     let nextSpeed = isDeleting ? deletingSpeed : typingSpeed;
 
-    if (!isDeleting && charIndex === currentTitle.length) {
+    if (!isDeleting && charIndex >= currentTitle.length) {
       nextSpeed = delayAfterTyped;
       isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
+    } else if (isDeleting && charIndex <= 0) {
       isDeleting = false;
       titleIndex = (titleIndex + 1) % titles.length;
-      nextSpeed = 200;
+      charIndex = 0;
+      nextSpeed = 150;
     }
 
     setTimeout(typeStep, nextSpeed);
   }
 
-  setTimeout(typeStep, delayAfterTyped);
+  // Start initial erasing after 1.5 seconds pause
+  setTimeout(typeStep, 1500);
 }
