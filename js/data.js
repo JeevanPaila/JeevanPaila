@@ -8,7 +8,7 @@ const PORTFOLIO_DATA = {
     name: "Jeevan Paila",
     title: "Data Integration Specialist | Ex-Amazon Analyst",
     subtitle: "Data Integration Specialist @ Virtual Employee | Ex- Automation Analyst & Pricing Data Analyst @ Amazon",
-    bio: "Experienced data professional with over half a decade of expertise in the e-commerce industry, specializing in analyzing price trends, manipulating pricing data, building automated ETL pipelines, and collaborating with retail teams to determine optimal pricing strategies, rebates, and shipping. Proven track record in executing major sale events resulting in significant revenue growth.",
+    bio: "Experienced data professional with over 8 years of expertise in the e-commerce industry, specializing in analyzing price trends, manipulating pricing data, building automated ETL pipelines, and collaborating with retail teams to determine optimal pricing strategies, rebates, and shipping. Proven track record in executing major sale events resulting in significant revenue growth.",
     location: "Bengaluru, Karnataka, India",
     email: "jeevandeep.paila@gmail.com",
     phone: "+91 9559554884",
@@ -23,7 +23,7 @@ const PORTFOLIO_DATA = {
   },
 
   metrics: [
-    { label: "Years Experience", value: 5, suffix: "+", description: "In Data Analytics, Integration & E-Commerce" },
+    { label: "Years Experience", value: 8, suffix: "+", description: "In Data Analytics, Integration & E-Commerce" },
     { label: "Data Quality Boost", value: 32, suffix: "%", description: "Enhanced via Python & SQL Preprocessing" },
     { label: "Auto Categorization", value: 97.5, suffix: "%", description: "Accuracy with Automated ML Algorithms" },
     { label: "Error Reduction", value: 90, suffix: "%", description: "In Delivery, Rebate & Price Changes Tracking" }
