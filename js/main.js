@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initSidebarToggle();
   initNavigationTabs();
+  initGlassBorderSpotlight();
   renderMetrics();
   renderExperience();
   renderSkills();
@@ -12,6 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initContactForm();
 });
+
+// Dynamic Edge Border Spotlight following cursor direction
+function initGlassBorderSpotlight() {
+  document.addEventListener('mousemove', (e) => {
+    const cards = document.querySelectorAll('.liquid-glass');
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+}
 
 // Sidebar Toggle Logic for Mobile
 function initSidebarToggle() {
