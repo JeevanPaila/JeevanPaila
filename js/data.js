@@ -210,6 +210,10 @@ const PORTFOLIO_DATA = {
   }
 };
 
+if (typeof window !== 'undefined') {
+  window.PORTFOLIO_DATA = PORTFOLIO_DATA;
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = PORTFOLIO_DATA;
 }

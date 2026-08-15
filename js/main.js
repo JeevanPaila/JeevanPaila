@@ -6,15 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebarToggle();
   initNavigationTabs();
   initGlassBorderSpotlight();
+  renderAllData();
+  initPortfolioFilters();
+  initContactForm();
+});
+
+// Fallback execution if DOMContentLoaded already fired
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setTimeout(renderAllData, 50);
+}
+
+function getPortfolioData() {
+  return window.PORTFOLIO_DATA || (typeof PORTFOLIO_DATA !== 'undefined' ? PORTFOLIO_DATA : null);
+}
+
+function renderAllData() {
   renderMetrics();
   renderExperience();
   renderEducation();
   renderCertifications();
   renderSkills();
   renderProjects('all');
-  initPortfolioFilters();
-  initContactForm();
-});
+}
 
 // Dynamic Edge Border Spotlight following cursor direction
 function initGlassBorderSpotlight() {
@@ -68,6 +81,7 @@ function initNavigationTabs() {
 
           // Trigger Skill bar fill animations if Resume tab opened
           if (selectedPage === 'resume') {
+            renderAllData();
             setTimeout(animateSkillBars, 150);
           }
         } else {
@@ -81,9 +95,10 @@ function initNavigationTabs() {
 // Render Metrics Grid with Liquid Glass cards
 function renderMetrics() {
   const container = document.getElementById('metrics-grid');
-  if (!container || !window.PORTFOLIO_DATA) return;
+  const data = getPortfolioData();
+  if (!container || !data || !data.metrics) return;
 
-  container.innerHTML = PORTFOLIO_DATA.metrics.map(m => `
+  container.innerHTML = data.metrics.map(m => `
     <div class="metric-item liquid-glass">
       <div class="metric-number">${m.value}${m.suffix}</div>
       <div class="metric-label">${m.label}</div>
@@ -94,9 +109,10 @@ function renderMetrics() {
 // Render Work Experience Timeline
 function renderExperience() {
   const container = document.getElementById('experience-timeline');
-  if (!container || !window.PORTFOLIO_DATA) return;
+  const data = getPortfolioData();
+  if (!container || !data || !data.experiences) return;
 
-  container.innerHTML = PORTFOLIO_DATA.experiences.map(exp => `
+  container.innerHTML = data.experiences.map(exp => `
     <li class="timeline-item">
       <h4 class="h4 timeline-item-title">${exp.role} — <span class="company-name">${exp.company}</span></h4>
       <span>${exp.period} • ${exp.location}</span>
@@ -114,9 +130,10 @@ function renderExperience() {
 // Render Education Timeline
 function renderEducation() {
   const container = document.getElementById('education-timeline');
-  if (!container || !window.PORTFOLIO_DATA || !PORTFOLIO_DATA.education) return;
+  const data = getPortfolioData();
+  if (!container || !data || !data.education) return;
 
-  container.innerHTML = PORTFOLIO_DATA.education.map(edu => `
+  container.innerHTML = data.education.map(edu => `
     <li class="timeline-item">
       <h4 class="h4 timeline-item-title">${edu.institution}</h4>
       <span>${edu.period}</span>
@@ -128,9 +145,10 @@ function renderEducation() {
 // Render Certifications List
 function renderCertifications() {
   const container = document.getElementById('certifications-list');
-  if (!container || !window.PORTFOLIO_DATA || !PORTFOLIO_DATA.certifications) return;
+  const data = getPortfolioData();
+  if (!container || !data || !data.certifications) return;
 
-  container.innerHTML = PORTFOLIO_DATA.certifications.map(cert => `
+  container.innerHTML = data.certifications.map(cert => `
     <div class="service-item liquid-glass" style="padding: 16px 20px;">
       <div class="service-icon-box" style="font-size: 24px;">
         <ion-icon name="ribbon-outline"></ion-icon>
@@ -146,9 +164,10 @@ function renderCertifications() {
 // Render Skills Matrix with Progress Bars
 function renderSkills() {
   const container = document.getElementById('skills-matrix-container');
-  if (!container || !window.PORTFOLIO_DATA) return;
+  const data = getPortfolioData();
+  if (!container || !data || !data.skills) return;
 
-  const s = PORTFOLIO_DATA.skills;
+  const s = data.skills;
   const allSkills = [
     ...s.languages.map(x => ({ ...x, cat: "Languages" })),
     ...s.mlAndAi.map(x => ({ ...x, cat: "Machine Learning" })),
@@ -179,11 +198,12 @@ function animateSkillBars() {
 // Render Projects Grid with Liquid Glass Cards
 function renderProjects(filter = 'all') {
   const container = document.getElementById('projects-grid');
-  if (!container || !window.PORTFOLIO_DATA) return;
+  const data = getPortfolioData();
+  if (!container || !data || !data.projects) return;
 
   const filtered = filter === 'all'
-    ? PORTFOLIO_DATA.projects
-    : PORTFOLIO_DATA.projects.filter(p => p.category === filter);
+    ? data.projects
+    : data.projects.filter(p => p.category === filter);
 
   container.innerHTML = filtered.map(proj => `
     <li class="project-item">
