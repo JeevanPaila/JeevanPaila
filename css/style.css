@@ -637,13 +637,13 @@ article.active {
   font-weight: 500;
 }
 
-.timeline-period {
+.timeline-item span {
   color: var(--gold-accent);
   font-size: var(--fs-6);
   font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 8px;
-  display: inline-block;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .timeline-text {

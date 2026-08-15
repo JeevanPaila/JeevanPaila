@@ -98,8 +98,8 @@ function renderExperience() {
 
   container.innerHTML = PORTFOLIO_DATA.experiences.map(exp => `
     <li class="timeline-item">
-      <h4 class="h4 timeline-item-title">${exp.role} <span class="company-name">— ${exp.company}</span></h4>
-      <span class="timeline-period">${exp.period} • ${exp.location}</span>
+      <h4 class="h4 timeline-item-title">${exp.role} — <span class="company-name">${exp.company}</span></h4>
+      <span>${exp.period} • ${exp.location}</span>
       <p class="timeline-text">${exp.summary}</p>
       <ul class="timeline-bullets">
         ${exp.achievements ? exp.achievements.map(a => `<li>${a}</li>`).join('') : ''}
@@ -119,7 +119,7 @@ function renderEducation() {
   container.innerHTML = PORTFOLIO_DATA.education.map(edu => `
     <li class="timeline-item">
       <h4 class="h4 timeline-item-title">${edu.institution}</h4>
-      <span class="timeline-period">${edu.period}</span>
+      <span>${edu.period}</span>
       <p class="timeline-text"><strong>${edu.degree}</strong> — ${edu.details}</p>
     </li>
   `).join('');
