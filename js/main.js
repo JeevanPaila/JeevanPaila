@@ -167,38 +167,29 @@ function renderCertifications() {
   `).join('');
 }
 
-// Render Skills Matrix with Progress Bars
+// Render Technical Proficiency Skill Cards (No Progress Bars)
 function renderSkills() {
   const container = document.getElementById('skills-matrix-container');
   const data = getPortfolioData();
   if (!container || !data || !data.skills) return;
 
-  const s = data.skills;
-  const allSkills = [
-    ...s.languages.map(x => ({ ...x, cat: "Languages" })),
-    ...s.mlAndAi.map(x => ({ ...x, cat: "Machine Learning" })),
-    ...s.dataEngineering.map(x => ({ ...x, cat: "Data Engineering" })),
-    ...s.cloudAndTools.map(x => ({ ...x, cat: "Cloud & MLOps" }))
-  ];
-
-  container.innerHTML = allSkills.map(sk => `
-    <div class="skills-item">
-      <div class="title-wrapper">
-        <h5 class="skill-title">${sk.name}</h5>
-        <data value="${sk.level}" class="skill-pct">${sk.level}%</data>
-      </div>
-      <div class="skill-bar-bg">
-        <div class="skill-bar-fill" data-level="${sk.level}%"></div>
-      </div>
+  container.innerHTML = `
+    <div class="skills-category-grid">
+      ${data.skills.map(cat => `
+        <div class="skill-category-card liquid-glass">
+          <div class="skill-card-header">
+            <div class="skill-card-icon">
+              <ion-icon name="${cat.icon || 'code-slash-outline'}"></ion-icon>
+            </div>
+            <h4 class="h4 skill-card-title">${cat.category}</h4>
+          </div>
+          <div class="skill-badges-wrapper">
+            ${cat.items.map(item => `<span class="tech-skill-badge">${item}</span>`).join('')}
+          </div>
+        </div>
+      `).join('')}
     </div>
-  `).join('');
-}
-
-function animateSkillBars() {
-  const fills = document.querySelectorAll('.skill-bar-fill');
-  fills.forEach(fill => {
-    fill.style.width = fill.getAttribute('data-level');
-  });
+  `;
 }
 
 // Render Projects Grid with Liquid Glass Cards

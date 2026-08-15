@@ -212,32 +212,76 @@ const PORTFOLIO_DATA = {
     }
   ],
 
-  skills: {
-    languages: [
-      { name: "Python", level: 95 },
-      { name: "SQL (MySQL / SQL Server / BigQuery)", level: 94 },
-      { name: "TypeScript & JavaScript", level: 88 },
-      { name: "Regex & Text Mining", level: 92 }
-    ],
-    mlAndAi: [
-      { name: "Generative AI & LLM Pipelines", level: 92 },
-      { name: "Enterprise RAG & Vector Search", level: 94 },
-      { name: "Autonomous AI Agents (KogniBots)", level: 90 },
-      { name: "Machine Learning & Product Categorization", level: 95 }
-    ],
-    dataEngineering: [
-      { name: "ETL / ELT Pipelines & PySpark", level: 96 },
-      { name: "Data Integration (JSON, XML, Rest API)", level: 95 },
-      { name: "Intelligent Document Extraction (KogniExtract)", level: 92 },
-      { name: "Data Validation & Quality Assurance", level: 94 }
-    ],
-    cloudAndTools: [
-      { name: "Next.js & SaaS Infrastructure", level: 88 },
-      { name: "Chrome Extension API Architecture", level: 90 },
-      { name: "Microsoft PowerBI & Tableau", level: 92 },
-      { name: "Git & Web Scraping Systems", level: 92 }
-    ]
-  },
+  skills: [
+    {
+      category: "Programming & Query Languages",
+      icon: "code-slash-outline",
+      items: [
+        "Python",
+        "SQL (PostgreSQL, MySQL, T-SQL)",
+        "PySpark SQL",
+        "BigQuery SQL",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "Regex & Text Processing",
+        "HTML5 / CSS3"
+      ]
+    },
+    {
+      category: "Data Integration & ETL Engineering",
+      icon: "git-network-outline",
+      items: [
+        "PySpark & Databricks",
+        "ETL / ELT Pipelines",
+        "REST APIs & Webhooks",
+        "Multimodal Data Integration",
+        "JSON & XML Schema Mapping",
+        "Batch & Real-Time Ingestion",
+        "Data Validation & Cleaning",
+        "Airflow / Workflow Orchestration"
+      ]
+    },
+    {
+      category: "Generative AI & Machine Learning",
+      icon: "sparkles-outline",
+      items: [
+        "Retrieval-Augmented Generation (RAG)",
+        "Vector DBs (Chroma, FAISS, Pinecone)",
+        "Autonomous AI Agents (KogniBots)",
+        "Product Categorization ML Models",
+        "Intelligent Document Extraction",
+        "LLM Prompt Engineering",
+        "NLP & Text Mining",
+        "Embeddings & Reranking"
+      ]
+    },
+    {
+      category: "Analytics & Business Intelligence",
+      icon: "bar-chart-outline",
+      items: [
+        "Microsoft PowerBI",
+        "Tableau Dashboards",
+        "Retail Pricing & KPI Analytics",
+        "Data Warehousing",
+        "Competitor Web Scraping",
+        "Executive Reporting Portals",
+        "Margin & Promotion Optimization"
+      ]
+    },
+    {
+      category: "Developer Tools & Infrastructure",
+      icon: "cloud-done-outline",
+      items: [
+        "Git & GitHub Actions",
+        "Docker & Containerization",
+        "Chrome Extension API (Manifest V3)",
+        "Linux Shell & PowerShell",
+        "Firebase & App Hosting",
+        "FastAPI & Node.js",
+        "CI / CD Deployment"
+      ]
+    }
+  ],
 
   ventures: [
     {
