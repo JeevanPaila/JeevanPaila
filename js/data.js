@@ -1,175 +1,182 @@
 /**
  * Personal & Professional Data Configuration for Jeevan Paila
- * Data Scientist | Data Integration Specialist | ML Engineer
- * 
- * Edit this file to update profile details, work experience, education, projects, skills, or contact info.
+ * Extracted directly from official resume Profile.pdf
  */
 
 const PORTFOLIO_DATA = {
   profile: {
     name: "Jeevan Paila",
-    title: "Data Scientist & Data Integration Specialist",
-    subtitle: "Architecting Scalable Data Pipelines, Predictive AI Models & Enterprise Intelligence Systems",
-    bio: "Passionate Data Scientist with 5+ years of expertise in building enterprise-grade ETL pipelines, machine learning models, and real-time data integration systems. Specialized in transforming high-volume unstructured and structured data into high-impact predictive insights and scalable automated workflows.",
-    location: "Bengaluru & Bhubaneswar, India",
+    title: "Data Integration Specialist | Ex-Amazon Analyst",
+    subtitle: "Data Integration Specialist @ Virtual Employee | Ex- Automation Analyst & Pricing Data Analyst @ Amazon",
+    bio: "Experienced data professional with over half a decade of expertise in the e-commerce industry, specializing in analyzing price trends, manipulating pricing data, building automated ETL pipelines, and collaborating with retail teams to determine optimal pricing strategies, rebates, and shipping. Proven track record in executing major sale events resulting in significant revenue growth.",
+    location: "Bengaluru, Karnataka, India",
     email: "jeevandeep.paila@gmail.com",
     phone: "+91 9559554884",
-    status: "Available for high-impact Data Science & AI leadership roles",
+    status: "Available for high-impact Data Science & Integration roles",
     cvLink: "./resume.pdf",
     socials: {
       github: "https://github.com/JeevanPaila",
       linkedin: "https://www.linkedin.com/in/jeevanpaila/",
       whatsapp: "https://wa.me/919559554884/",
-      kaggle: "https://www.kaggle.com/jeevanpaila",
       email: "mailto:jeevandeep.paila@gmail.com"
     }
   },
 
   metrics: [
-    { label: "Years Experience", value: 5, suffix: "+", description: "In Data Science, Analytics & ETL Systems" },
-    { label: "Data Processed", value: 10, suffix: "M+", description: "Records Processed Daily via PySpark Pipelines" },
-    { label: "Pipeline Uptime", value: 99.8, suffix: "%", description: "Enterprise Data Reliability Standard" },
-    { label: "ML Models Deployed", value: 15, suffix: "+", description: "Production Predictive Models & Analytics Tools" }
+    { label: "Years Experience", value: 5, suffix: "+", description: "In Data Analytics, Integration & E-Commerce" },
+    { label: "Data Quality Boost", value: 32, suffix: "%", description: "Enhanced via Python & SQL Preprocessing" },
+    { label: "Auto Categorization", value: 97.5, suffix: "%", description: "Accuracy with Automated ML Algorithms" },
+    { label: "Error Reduction", value: 90, suffix: "%", description: "In Delivery, Rebate & Price Changes Tracking" }
   ],
 
   experiences: [
     {
       id: "exp-1",
-      role: "Senior Data Integration Specialist & Data Scientist",
-      company: "Enterprise AI & Data Solutions",
-      period: "2021 — Present",
-      location: "Bengaluru, India",
-      summary: "Leading end-to-end data architecture, multi-source ingestion pipelines, and ML feature store development for enterprise analytics platforms.",
+      role: "Data Integration Specialist",
+      company: "Virtual Employee Pvt. Ltd.",
+      period: "Oct 2022 — Present",
+      location: "Bengaluru, Karnataka, India",
+      summary: "Leading end-to-end data cleanup, robust ETL pipeline development, automated product categorization algorithms, and executive PowerBI analytics.",
       achievements: [
-        "Architected distributed PySpark & Databricks Delta Lake pipelines processing 10M+ daily records with 99.8% operational uptime.",
-        "Engineered predictive machine learning models for customer churn and real-time transaction anomaly detection.",
-        "Optimized complex SQL queries and snowflake schema transformations, reducing pipeline execution latency by 45%.",
-        "Implemented automated MLOps CI/CD pipelines with Docker and Airflow for continuous model retrain and inference."
+        "Developed and implemented robust ETL pipelines incorporating data cleanup and analysis to ensure high output precision.",
+        "Enhanced data quality by 32% using Python (Regex) and SQL for cleaning and preprocessing multi-source data.",
+        "Automated product categorization using advanced algorithms, achieving 97.5% accuracy and significantly reducing manual effort.",
+        "Created and optimized guardrails to improve resource prioritization and time management in a KPI-driven environment.",
+        "Utilized PowerBI to build interactive pricing dashboards analyzing trends and providing actionable insights to senior stakeholders.",
+        "Received, cleaned, and integrated diverse data formats (JSON, CSV, TSV, XML) into central repositories."
       ],
-      skills: ["PySpark", "Databricks", "Python", "SQL", "Scikit-Learn", "AWS", "Snowflake", "Docker", "MLOps"]
+      skills: ["Python", "SQL", "ETL Pipelines", "PowerBI", "Regex", "JSON / XML Parsing", "Data Cleaning", "Data Integration"]
     },
     {
       id: "exp-2",
-      role: "Data Integration Engineer",
-      company: "Global Tech Solutions",
-      period: "2019 — 2021",
-      location: "Bhubaneswar, India",
-      summary: "Designed and deployed enterprise ETL/ELT workflows, data integration hubs, and executive BI dashboards.",
+      role: "Automation Analyst",
+      company: "Amazon",
+      period: "Dec 2020 — Oct 2022",
+      location: "Bengaluru, Karnataka, India",
+      summary: "Managed cross-functional retail teams, led a 20-person team, optimized pricing/rebate systems, and supported the launch of Amazon-NL.",
       achievements: [
-        "Developed automated ingestion pipelines connecting REST APIs, PostgreSQL replicas, and Cloud Storage into central data lakes.",
-        "Built custom Python data validation frameworks that cut data ingestion error rates by 60%.",
-        "Designed interactive PowerBI and Tableau dashboards providing executive leadership with real-time KPI tracking.",
-        "Streamlined database migration project transferring legacy data models into scalable cloud architecture."
+        "Collaborated with retail teams and internal/external stakeholders to optimize workflows, improving data processing efficiency by 26%.",
+        "Developed and maintained a centralized tracking system for shipping, rebate, delivery policy, and price changes, reducing errors by 90%.",
+        "Optimized data extraction performance using tuned SQL queries, achieving an average 1.5-hour reduction in query execution times.",
+        "Owned process-related projects, managing and training a team of 20 while adding key features to Amazon promotion and rebate tools.",
+        "Led a dynamic team shaping pricing strategies, rebate structures, and shipping policies, ensuring the successful launch of Amazon-NL."
       ],
-      skills: ["Python", "ETL Pipelines", "PostgreSQL", "Airflow", "Tableau", "Git", "REST APIs", "SQL"]
+      skills: ["Amazon Retail Systems", "SQL Query Optimization", "Automation Analytics", "Team Leadership", "Pricing & Rebates", "Process Improvement"]
+    },
+    {
+      id: "exp-3",
+      role: "Pricing Data Analyst",
+      company: "Amazon",
+      period: "May 2019 — Nov 2020",
+      location: "Bengaluru, Karnataka, India",
+      summary: "Monitored European & American retail markets, automated competitor web scraping, and executed major sale campaigns.",
+      achievements: [
+        "Implemented comprehensive data validation processes to ensure pricing data accuracy, reducing errors by 20%.",
+        "Automated competitor website web scraping and reporting to track price fluctuations during Black Friday, Prime Day, and Festival Sales.",
+        "Monitored and analyzed competitor activities across Europe and America regions to inform pricing, shipping, and rebate decisions."
+      ],
+      skills: ["Web Scraping", "Competitor Analysis", "Data Validation", "E-Commerce Pricing", "SQL", "Market Research"]
+    },
+    {
+      id: "exp-4",
+      role: "Software Developer",
+      company: "Sandeepana Academy",
+      period: "Mar 2018 — Feb 2019",
+      location: "Bhubaneswar, Odisha, India",
+      summary: "Built and managed company web applications, student SQL databases, and engagement analytics.",
+      achievements: [
+        "Developed and executed the company website with traffic tracking, increasing engagement conversion rates by 150%.",
+        "Managed SQL databases for student and test-related records and created survey/result reporting dashboards."
+      ],
+      skills: ["Web Development", "SQL Databases", "Analytics Dashboards", "Conversion Optimization"]
     }
   ],
 
   education: [
     {
       id: "edu-1",
-      degree: "Bachelor of Technology (B.Tech) in Computer Science & Engineering",
-      institution: "State Technological University",
-      period: "2015 — 2019",
-      location: "India",
-      details: "Specialized in Big Data Architectures, Machine Learning Algorithms, Database Management Systems, and Software Engineering."
+      degree: "Postgraduate Degree in Computational Data Science",
+      institution: "Indian Institute of Science (IISc)",
+      period: "Oct 2023 — Nov 2024",
+      location: "Bengaluru, India",
+      details: "Advanced study in computational statistics, machine learning algorithms, big data processing, and data science methodology at India's premier research institute."
+    },
+    {
+      id: "edu-2",
+      degree: "Bachelor's Degree in Mechatronics, Robotics, and Automation Engineering",
+      institution: "Bharath University",
+      period: "2013 — 2017",
+      location: "Chennai, India",
+      details: "Engineering foundation in automated systems, control engineering, data structures, and mathematical modeling."
     }
   ],
 
   certifications: [
-    { name: "Databricks Certified Data Engineer Professional", issuer: "Databricks" },
-    { name: "AWS Certified Data Analytics & Cloud Specialist", issuer: "Amazon Web Services" },
-    { name: "Machine Learning & AI Specialization", issuer: "DeepLearning.AI / Coursera" }
+    { name: "Databases and SQL for Data Science", issuer: "IBM / Coursera" },
+    { name: "Data Science Methodology", issuer: "IBM / Coursera" },
+    { name: "Tools for Data Science", issuer: "IBM / Coursera" },
+    { name: "Data Analysis with Python", issuer: "IBM / Coursera" },
+    { name: "Data Visualization with Python", issuer: "IBM / Coursera" }
   ],
 
   projects: [
     {
       id: "proj-1",
-      title: "Real-Time Streaming Anomaly Detection Engine",
-      category: "ml",
-      categoryName: "Machine Learning",
-      description: "Distributed real-time anomaly detection system built with PySpark and Isolation Forest to identify fraud and operational anomalies in live transaction data streams.",
+      title: "E-Commerce Competitor Price Scraping & Tracking Engine",
+      category: "de",
+      categoryName: "Data Engineering",
+      description: "Automated web scraping and ETL pipeline collecting real-time competitor pricing, shipping policies, and deal offers across Europe and America retail sites.",
       highlights: [
-        "Ingests 50,000 events/second using Apache Kafka and PySpark Structured Streaming.",
-        "Uses automated feature extraction and custom Isolation Forest model with sub-second prediction latency.",
-        "Real-time alerting integration via Webhooks & Prometheus metrics."
+        "Automated price fluctuation monitoring during major sale events (Black Friday, Prime Day).",
+        "Cleansed and parsed complex JSON, XML, and HTML web responses.",
+        "Integrated alert triggers for competitive price drops."
       ],
-      tech: ["PySpark", "Kafka", "Python", "Isolation Forest", "Docker", "Prometheus"],
+      tech: ["Python", "Web Scraping", "SQL", "Regex", "ETL Pipelines", "Data Validation"],
       github: "https://github.com/JeevanPaila",
       demo: "#"
     },
     {
       id: "proj-2",
-      title: "Enterprise Multi-Source Data Lake & Feature Store",
-      category: "de",
-      categoryName: "Data Engineering",
-      description: "Unified cloud data lake architecture integrating heterogeneous relational databases, unstructured JSON logs, and REST APIs into a curated Snowflake data warehouse.",
+      title: "Automated E-Commerce Product Categorization ML Engine",
+      category: "ml",
+      categoryName: "Machine Learning",
+      description: "Advanced classification algorithms categorizing multi-source retail inventory data with high accuracy.",
       highlights: [
-        "Automated orchestration using Apache Airflow with automated schema evolution handling.",
-        "Implemented Medallion architecture (Bronze -> Silver -> Gold tables) in Databricks.",
-        "Decreased query runtime by 50% using optimized partitioning and Z-Ordering."
+        "Achieved 97.5% classification accuracy on retail product catalog data.",
+        "Significantly reduced manual cataloging effort across cross-functional teams.",
+        "Processed multi-format feeds (JSON, CSV, TSV, XML)."
       ],
-      tech: ["Databricks", "Airflow", "Snowflake", "AWS S3", "PySpark", "SQL"],
+      tech: ["Python", "Scikit-Learn", "Machine Learning", "NLP", "Pandas", "SQL"],
       github: "https://github.com/JeevanPaila",
       demo: "#"
     },
     {
       id: "proj-3",
-      title: "Predictive Churn & Customer Lifetime Value Model",
-      category: "ml",
-      categoryName: "Machine Learning",
-      description: "End-to-end customer churn prediction pipeline featuring automated feature engineering, XGBoost classification, and SHAP explainability analysis.",
+      title: "Interactive Retail Pricing & KPI Dashboard",
+      category: "analytics",
+      categoryName: "Analytics",
+      description: "Executive PowerBI analytics portal visualizing pricing trends, rebate margins, and shipping policy metrics.",
       highlights: [
-        "Achieved 92.4% ROC-AUC score on complex multi-dimensional customer behavioral data.",
-        "Integrated SHAP (SHapley Additive exPlanations) for clear model interpretability for business stakeholders.",
-        "Deployed via FastAPI microservice with automated model performance monitoring."
+        "Provided actionable insights directly to senior leadership and cross-functional teams.",
+        "Enhanced pricing data quality by 32% through automated Regex & SQL preprocessing.",
+        "Interactive trend filtering and cross-regional comparisons."
       ],
-      tech: ["Python", "XGBoost", "Scikit-Learn", "SHAP", "FastAPI", "Pandas"],
+      tech: ["PowerBI", "SQL Server", "Data Modeling", "Tableau", "Data Analysis"],
       github: "https://github.com/JeevanPaila",
       demo: "#"
     },
     {
       id: "proj-4",
-      title: "LLM-Powered Technical Documentation Query System",
-      category: "nlp",
-      categoryName: "NLP & LLMs",
-      description: "Retrieval-Augmented Generation (RAG) system enabling natural language semantic search over massive technical specifications and API docs.",
-      highlights: [
-        "Vector database integration using FAISS and LangChain for sub-100ms vector similarity lookup.",
-        "Custom chunking strategy optimized for code blocks and complex tables.",
-        "Reduced internal developer support queries by 35% through instant answers."
-      ],
-      tech: ["Python", "LangChain", "OpenAI API", "FAISS", "Streamlit", "Vector DB"],
-      github: "https://github.com/JeevanPaila",
-      demo: "#"
-    },
-    {
-      id: "proj-5",
-      title: "Automated Data Quality & Validation Framework",
+      title: "Centralized Promotion, Rebate & Shipping Tracking System",
       category: "de",
       categoryName: "Data Engineering",
-      description: "Declarative python data validation library enforcing schema contracts, null-checks, distribution shifts, and business rules across ETL pipelines.",
+      description: "Unified data tracking system built for Amazon retail operations, managing promotion changes, rebate structures, and delivery policy tracking.",
       highlights: [
-        "Great Expectations integration with custom validation rules.",
-        "Automated slack/email notification alerts on data drift detection.",
-        "Seamless integration with Airflow DAGs and PySpark pipelines."
+        "Reduced tracking errors by 90%.",
+        "Optimized SQL query performance, saving an average of 1.5 hours in query execution times.",
+        "Supported the successful retail launch of Amazon-NL."
       ],
-      tech: ["Python", "Great Expectations", "PySpark", "Airflow", "CI/CD"],
-      github: "https://github.com/JeevanPaila",
-      demo: "#"
-    },
-    {
-      id: "proj-6",
-      title: "Interactive Executive KPI & Analytics Dashboard",
-      category: "analytics",
-      categoryName: "Analytics",
-      description: "Dynamic business intelligence portal visualizing revenue velocity, customer retention cohorts, and operational bottleneck metrics.",
-      highlights: [
-        "Interactive cross-filtering and drill-down capabilities.",
-        "Automated daily refresh connected directly to Snowflake data warehouse.",
-        "Custom metric alerts and anomaly highlighting."
-      ],
-      tech: ["Tableau", "SQL", "Snowflake", "Data Modeling", "Python"],
+      tech: ["SQL Query Tuning", "Data Processing", "Process Automation", "Amazon Systems"],
       github: "https://github.com/JeevanPaila",
       demo: "#"
     }
@@ -177,31 +184,28 @@ const PORTFOLIO_DATA = {
 
   skills: {
     languages: [
-      { name: "Python", level: 95, icon: "code-slash-outline" },
-      { name: "SQL", level: 92, icon: "server-outline" },
-      { name: "R", level: 80, icon: "analytics-outline" },
-      { name: "Bash / Shell", level: 85, icon: "terminal-outline" }
+      { name: "Python", level: 95 },
+      { name: "SQL (MySQL / SQL Server)", level: 94 },
+      { name: "R", level: 82 },
+      { name: "Regex & Text Mining", level: 92 }
     ],
     mlAndAi: [
-      { name: "Scikit-Learn", level: 92 },
-      { name: "PyTorch & TensorFlow", level: 85 },
-      { name: "XGBoost & LightGBM", level: 90 },
-      { name: "NLP & LLM RAG Pipelines", level: 85 },
-      { name: "Feature Engineering & SHAP", level: 90 }
+      { name: "Machine Learning & Algorithms", level: 90 },
+      { name: "Statistical Data Analysis", level: 92 },
+      { name: "Product Categorization ML", level: 95 },
+      { name: "Mathematics for Data Science", level: 88 }
     ],
     dataEngineering: [
-      { name: "PySpark & Apache Spark", level: 92 },
-      { name: "Databricks & Delta Lake", level: 90 },
-      { name: "Snowflake & PostgreSQL", level: 88 },
-      { name: "Apache Airflow & Kafka", level: 85 },
-      { name: "ETL / ELT Architecture", level: 95 }
+      { name: "ETL / ELT Pipelines", level: 96 },
+      { name: "Data Integration (JSON, XML, CSV)", level: 95 },
+      { name: "Google BigQuery & SQL Tuning", level: 90 },
+      { name: "Data Validation & Quality", level: 94 }
     ],
     cloudAndTools: [
-      { name: "AWS (S3, ECR, Lambda, EC2)", level: 85 },
-      { name: "Docker & Containerization", level: 88 },
-      { name: "Git & GitHub CI/CD", level: 92 },
-      { name: "Firebase Hosting & Cloud Functions", level: 85 },
-      { name: "Tableau & PowerBI", level: 85 }
+      { name: "Microsoft PowerBI & Tableau", level: 92 },
+      { name: "Google Analytics & Data Studio", level: 88 },
+      { name: "Jira & Agile / Scrum", level: 90 },
+      { name: "Git & Web Scraping Tools", level: 92 }
     ]
   }
 };
