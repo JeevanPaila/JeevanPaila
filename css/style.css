@@ -33,8 +33,8 @@
   --input-bg: rgba(255, 255, 255, 0.03);
   --input-border: rgba(255, 255, 255, 0.12);
 
-  --ff-poppins: 'Poppins', 'Inter', -apple-system, sans-serif;
-  --ff-mono: 'Fira Code', monospace;
+  --ff-poppins: 'Geist', 'Poppins', -apple-system, sans-serif;
+  --ff-mono: 'Geist Mono', 'Fira Code', monospace;
 
   --fs-1: 32px;
   --fs-2: 24px;
