@@ -483,7 +483,8 @@ function initTypewriter() {
     "Data Integration Specialist",
     "Ex-Amazon Automation Analyst",
     "Data Engineer",
-    "Data Scientist"
+    "Data Scientist",
+    "Data Analyst"
   ];
 
   let titleIndex = 0;
