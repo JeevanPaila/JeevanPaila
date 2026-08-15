@@ -1,6 +1,5 @@
 /**
- * Main vCard Portfolio Script for Jeevan Paila
- * Inspired by codewithsadee/vcard-personal-portfolio
+ * Main Liquid Glass vCard Portfolio Script for Jeevan Paila
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -62,13 +61,13 @@ function initNavigationTabs() {
   });
 }
 
-// Render Metrics Grid
+// Render Metrics Grid with Liquid Glass cards
 function renderMetrics() {
   const container = document.getElementById('metrics-grid');
   if (!container || !window.PORTFOLIO_DATA) return;
 
   container.innerHTML = PORTFOLIO_DATA.metrics.map(m => `
-    <div class="metric-item">
+    <div class="metric-item liquid-glass">
       <div class="metric-number">${m.value}${m.suffix}</div>
       <div class="metric-label">${m.label}</div>
     </div>
@@ -125,7 +124,7 @@ function animateSkillBars() {
   });
 }
 
-// Render Projects Grid
+// Render Projects Grid with Liquid Glass Cards
 function renderProjects(filter = 'all') {
   const container = document.getElementById('projects-grid');
   if (!container || !window.PORTFOLIO_DATA) return;
@@ -136,7 +135,7 @@ function renderProjects(filter = 'all') {
 
   container.innerHTML = filtered.map(proj => `
     <li class="project-item">
-      <div class="project-card">
+      <div class="project-card liquid-glass">
         <div>
           <div class="project-category">${proj.categoryName}</div>
           <h3 class="project-title">${proj.title}</h3>
