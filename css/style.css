@@ -239,19 +239,21 @@ main {
   border-radius: 24px;
   padding: 0;
   overflow: hidden;
-  width: 140px;
-  height: 140px;
+  width: 125px;
+  height: 125px;
   box-shadow: var(--glass-shadow);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  transition: transform var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .avatar-box:hover {
   border-color: var(--glass-border-glow);
-  transform: scale(1.02);
+  box-shadow: var(--glass-glow-gold);
+  overflow: visible;
 }
 
 .avatar-box img {
@@ -259,6 +261,14 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
+  transform-origin: bottom center;
+}
+
+.avatar-box:hover img {
+  transform: scale(1.22) translateY(-8px);
+  filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.5));
+  z-index: 10;
 }
 
 .info-content .name {
