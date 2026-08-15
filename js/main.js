@@ -98,13 +98,13 @@ function renderExperience() {
 
   container.innerHTML = PORTFOLIO_DATA.experiences.map(exp => `
     <li class="timeline-item">
-      <h4 class="h4 timeline-item-title">${exp.role}</h4>
-      <div class="timeline-item-company">${exp.company} • (${exp.period}) — ${exp.location}</div>
+      <h4 class="h4 timeline-item-title">${exp.role} <span class="company-name">— ${exp.company}</span></h4>
+      <span class="timeline-period">${exp.period} • ${exp.location}</span>
       <p class="timeline-text">${exp.summary}</p>
-      <ul style="margin-top: 8px; margin-bottom: 10px; padding-left: 18px; font-size: var(--fs-6); color: var(--text-secondary);">
-        ${exp.achievements ? exp.achievements.map(a => `<li style="list-style: disc; margin-bottom: 4px;">${a}</li>`).join('') : ''}
+      <ul class="timeline-bullets">
+        ${exp.achievements ? exp.achievements.map(a => `<li>${a}</li>`).join('') : ''}
       </ul>
-      <div class="tech-tags">
+      <div class="tech-tags" style="margin-top: 10px;">
         ${exp.skills.map(s => `<span class="tech-tag">${s}</span>`).join('')}
       </div>
     </li>
@@ -118,9 +118,9 @@ function renderEducation() {
 
   container.innerHTML = PORTFOLIO_DATA.education.map(edu => `
     <li class="timeline-item">
-      <h4 class="h4 timeline-item-title">${edu.degree}</h4>
-      <div class="timeline-item-company">${edu.institution} • (${edu.period})</div>
-      <p class="timeline-text">${edu.details}</p>
+      <h4 class="h4 timeline-item-title">${edu.institution}</h4>
+      <span class="timeline-period">${edu.period}</span>
+      <p class="timeline-text"><strong>${edu.degree}</strong> — ${edu.details}</p>
     </li>
   `).join('');
 }
