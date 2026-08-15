@@ -409,27 +409,6 @@
 
   </main>
 
-  <!-- Firebase App & Analytics SDKs -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyC1J6WTVqVyxjibAd3acbS6ULBYP3k0kL8",
-      authDomain: "jeevanpaila-com.firebaseapp.com",
-      projectId: "jeevanpaila-com",
-      storageBucket: "jeevanpaila-com.firebasestorage.app",
-      messagingSenderId: "358505581937",
-      appId: "1:358505581937:web:0fd5a739826448aea87ad0",
-      measurementId: "G-9KS7N7Z825"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    window.firebaseApp = app;
-    window.firebaseAnalytics = analytics;
-  </script>
-
   <!-- Application Scripts -->
   <script src="./js/data.js"></script>
   <script src="./js/playground.js"></script>
