@@ -561,14 +561,15 @@ article.active {
   margin-bottom: 30px;
 }
 
-.timeline .title-wrapper {
+.title-wrapper {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
-.timeline .icon-box {
+.title-wrapper .icon-box {
   position: relative;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -581,7 +582,16 @@ article.active {
   font-size: 22px;
   color: var(--gold-accent);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  z-index: 1;
+  flex-shrink: 0;
+}
+
+.skills-item .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: var(--fs-5);
+  gap: 0;
 }
 
 .timeline-list {
@@ -662,13 +672,6 @@ article.active {
 }
 
 .skills-item { margin-bottom: 16px; }
-
-.title-wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
-  font-size: var(--fs-5);
-}
 
 .skill-title { color: var(--text-primary); font-weight: 500; }
 .skill-pct { color: var(--cyan-accent); font-family: var(--ff-mono); }
