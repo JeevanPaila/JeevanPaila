@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initGlassBorderSpotlight();
   renderMetrics();
   renderExperience();
+  renderEducation();
+  renderCertifications();
   renderSkills();
   renderProjects('all');
   initPortfolioFilters();
@@ -97,12 +99,47 @@ function renderExperience() {
   container.innerHTML = PORTFOLIO_DATA.experiences.map(exp => `
     <li class="timeline-item">
       <h4 class="h4 timeline-item-title">${exp.role}</h4>
-      <div class="timeline-item-company">${exp.company} • (${exp.period})</div>
+      <div class="timeline-item-company">${exp.company} • (${exp.period}) — ${exp.location}</div>
       <p class="timeline-text">${exp.summary}</p>
-      <div class="tech-tags" style="margin-top: 8px;">
+      <ul style="margin-top: 8px; margin-bottom: 10px; padding-left: 18px; font-size: var(--fs-6); color: var(--text-secondary);">
+        ${exp.achievements ? exp.achievements.map(a => `<li style="list-style: disc; margin-bottom: 4px;">${a}</li>`).join('') : ''}
+      </ul>
+      <div class="tech-tags">
         ${exp.skills.map(s => `<span class="tech-tag">${s}</span>`).join('')}
       </div>
     </li>
+  `).join('');
+}
+
+// Render Education Timeline
+function renderEducation() {
+  const container = document.getElementById('education-timeline');
+  if (!container || !window.PORTFOLIO_DATA || !PORTFOLIO_DATA.education) return;
+
+  container.innerHTML = PORTFOLIO_DATA.education.map(edu => `
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">${edu.degree}</h4>
+      <div class="timeline-item-company">${edu.institution} • (${edu.period})</div>
+      <p class="timeline-text">${edu.details}</p>
+    </li>
+  `).join('');
+}
+
+// Render Certifications List
+function renderCertifications() {
+  const container = document.getElementById('certifications-list');
+  if (!container || !window.PORTFOLIO_DATA || !PORTFOLIO_DATA.certifications) return;
+
+  container.innerHTML = PORTFOLIO_DATA.certifications.map(cert => `
+    <div class="service-item liquid-glass" style="padding: 16px 20px;">
+      <div class="service-icon-box" style="font-size: 24px;">
+        <ion-icon name="ribbon-outline"></ion-icon>
+      </div>
+      <div class="service-content-box">
+        <h4 class="h4 service-item-title" style="font-size: var(--fs-5);">${cert.name}</h4>
+        <p class="service-item-text" style="font-size: var(--fs-7);">${cert.issuer}</p>
+      </div>
+    </div>
   `).join('');
 }
 

@@ -2,7 +2,7 @@
  * Personal & Professional Data Configuration for Jeevan Paila
  * Data Scientist | Data Integration Specialist | ML Engineer
  * 
- * Edit this file to update profile details, work experience, projects, skills, or contact info.
+ * Edit this file to update profile details, work experience, education, projects, skills, or contact info.
  */
 
 const PORTFOLIO_DATA = {
@@ -39,14 +39,14 @@ const PORTFOLIO_DATA = {
       company: "Enterprise AI & Data Solutions",
       period: "2021 — Present",
       location: "Bengaluru, India",
-      summary: "Leading end-to-end data architecture, multi-source ingestion pipelines, and ML feature store development for large-scale enterprise analytics.",
+      summary: "Leading end-to-end data architecture, multi-source ingestion pipelines, and ML feature store development for enterprise analytics platforms.",
       achievements: [
-        "Architected distributed PySpark & Databricks pipelines processing 10M+ daily records with 99.8% uptime.",
-        "Engineered predictive machine learning models for customer churn and anomaly detection in real-time data streams.",
+        "Architected distributed PySpark & Databricks Delta Lake pipelines processing 10M+ daily records with 99.8% operational uptime.",
+        "Engineered predictive machine learning models for customer churn and real-time transaction anomaly detection.",
         "Optimized complex SQL queries and snowflake schema transformations, reducing pipeline execution latency by 45%.",
-        "Collaborated with cross-functional teams to integrate automated MLOps pipelines using CI/CD and Docker."
+        "Implemented automated MLOps CI/CD pipelines with Docker and Airflow for continuous model retrain and inference."
       ],
-      skills: ["PySpark", "Databricks", "Python", "SQL", "Scikit-Learn", "AWS", "Snowflake", "Docker"]
+      skills: ["PySpark", "Databricks", "Python", "SQL", "Scikit-Learn", "AWS", "Snowflake", "Docker", "MLOps"]
     },
     {
       id: "exp-2",
@@ -54,15 +54,32 @@ const PORTFOLIO_DATA = {
       company: "Global Tech Solutions",
       period: "2019 — 2021",
       location: "Bhubaneswar, India",
-      summary: "Designed and deployed enterprise ETL/ELT workflows, data integration hubs, and business intelligence reporting dashboards.",
+      summary: "Designed and deployed enterprise ETL/ELT workflows, data integration hubs, and executive BI dashboards.",
       achievements: [
-        "Developed automated ingestion pipelines connecting REST APIs, PostgreSQL, and Cloud Storage into central data lakes.",
+        "Developed automated ingestion pipelines connecting REST APIs, PostgreSQL replicas, and Cloud Storage into central data lakes.",
         "Built custom Python data validation frameworks that cut data ingestion error rates by 60%.",
-        "Designed interactive PowerBI and Tableau dashboards providing executive leadership with actionable KPI tracking.",
+        "Designed interactive PowerBI and Tableau dashboards providing executive leadership with real-time KPI tracking.",
         "Streamlined database migration project transferring legacy data models into scalable cloud architecture."
       ],
-      skills: ["Python", "ETL Pipelines", "PostgreSQL", "Airflow", "Tableau", "Git", "REST APIs"]
+      skills: ["Python", "ETL Pipelines", "PostgreSQL", "Airflow", "Tableau", "Git", "REST APIs", "SQL"]
     }
+  ],
+
+  education: [
+    {
+      id: "edu-1",
+      degree: "Bachelor of Technology (B.Tech) in Computer Science & Engineering",
+      institution: "State Technological University",
+      period: "2015 — 2019",
+      location: "India",
+      details: "Specialized in Big Data Architectures, Machine Learning Algorithms, Database Management Systems, and Software Engineering."
+    }
+  ],
+
+  certifications: [
+    { name: "Databricks Certified Data Engineer Professional", issuer: "Databricks" },
+    { name: "AWS Certified Data Analytics & Cloud Specialist", issuer: "Amazon Web Services" },
+    { name: "Machine Learning & AI Specialization", issuer: "DeepLearning.AI / Coursera" }
   ],
 
   projects: [
