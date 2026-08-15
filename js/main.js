@@ -481,7 +481,7 @@ function initTypewriter() {
 
   const titles = [
     "Data Integration Specialist",
-    "Ex-Amazon Automation Analyst",
+    "Automation Analyst",
     "Data Engineer",
     "Data Scientist",
     "Data Analyst"
