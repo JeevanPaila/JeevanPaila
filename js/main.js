@@ -1,276 +1,183 @@
 /**
- * Main Application Script for Jeevan Paila Portfolio
- * Handles UI rendering, theme management, scroll observers, dynamic filtering, modal popups.
+ * Main vCard Portfolio Script for Jeevan Paila
+ * Inspired by codewithsadee/vcard-personal-portfolio
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize App
-  renderProfile();
+  initSidebarToggle();
+  initNavigationTabs();
   renderMetrics();
   renderExperience();
-  renderProjects('all');
   renderSkills();
-  bindThemeToggle();
-  bindProjectFilters();
-  bindContactForm();
-  initScrollAnimations();
-  initMetricCounters();
+  renderProjects('all');
+  initPortfolioFilters();
+  initContactForm();
 });
 
-// Render Hero & Profile Details
-function renderProfile() {
-  const p = PORTFOLIO_DATA.profile;
-  
-  // Set elements
-  setTextContent('hero-name', p.name);
-  setTextContent('hero-subtitle', p.subtitle);
-  setTextContent('about-bio', p.bio);
-  setTextContent('status-pill', p.status);
-  setTextContent('contact-email', p.email);
-  setTextContent('contact-phone', p.phone);
-  setTextContent('contact-location', p.location);
+// Sidebar Toggle Logic for Mobile
+function initSidebarToggle() {
+  const sidebar = document.querySelector('[data-sidebar]');
+  const sidebarBtn = document.querySelector('[data-sidebar-btn]');
 
-  // Links
-  setHref('cv-btn-hero', p.cvLink);
-  setHref('cv-btn-nav', p.cvLink);
-  setHref('github-link-nav', p.socials.github);
-  setHref('linkedin-link-nav', p.socials.linkedin);
-  setHref('github-link-footer', p.socials.github);
-  setHref('linkedin-link-footer', p.socials.linkedin);
-  setHref('whatsapp-link-contact', p.socials.whatsapp);
-  setHref('email-link-contact', p.socials.email);
+  if (sidebar && sidebarBtn) {
+    sidebarBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  }
 }
 
-// Render Key Metrics
+// vCard Page Navigation Logic (Tab Switching)
+function initNavigationTabs() {
+  const navLinks = document.querySelectorAll('[data-nav-link]');
+  const pages = document.querySelectorAll('[data-page]');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      const selectedPage = this.getAttribute('data-nav-link');
+
+      // Update Nav Buttons
+      navLinks.forEach(n => n.classList.remove('active'));
+      this.classList.add('active');
+
+      // Update Active Article Page
+      pages.forEach(page => {
+        if (page.getAttribute('data-page') === selectedPage) {
+          page.classList.add('active');
+          window.scrollTo(0, 0);
+
+          // If Data Lab tab opened, re-render ML Simulator Canvas
+          if (selectedPage === 'datalab' && window.mlSim) {
+            setTimeout(() => window.mlSim.render(), 100);
+          }
+
+          // Trigger Skill bar fill animations if Resume tab opened
+          if (selectedPage === 'resume') {
+            setTimeout(animateSkillBars, 150);
+          }
+        } else {
+          page.classList.remove('active');
+        }
+      });
+    });
+  });
+}
+
+// Render Metrics Grid
 function renderMetrics() {
   const container = document.getElementById('metrics-grid');
-  if (!container) return;
-  
+  if (!container || !window.PORTFOLIO_DATA) return;
+
   container.innerHTML = PORTFOLIO_DATA.metrics.map(m => `
-    <div class="metric-card glass-card">
-      <div class="metric-value-box">
-        <span class="metric-value" data-target="${m.value}">${m.value}</span>
-        <span class="metric-suffix">${m.suffix}</span>
-      </div>
+    <div class="metric-item">
+      <div class="metric-number">${m.value}${m.suffix}</div>
       <div class="metric-label">${m.label}</div>
-      <div class="metric-desc">${m.description}</div>
     </div>
   `).join('');
 }
 
-// Render Experience Timeline
+// Render Work Experience Timeline
 function renderExperience() {
   const container = document.getElementById('experience-timeline');
-  if (!container) return;
+  if (!container || !window.PORTFOLIO_DATA) return;
 
-  container.innerHTML = PORTFOLIO_DATA.experiences.map((exp, index) => `
-    <div class="timeline-item glass-card reveal">
-      <div class="timeline-badge">${index + 1}</div>
-      <div class="timeline-header">
-        <div>
-          <h3 class="timeline-role">${exp.role}</h3>
-          <h4 class="timeline-company">${exp.company}</h4>
-        </div>
-        <div class="timeline-meta">
-          <span class="timeline-period"><ion-icon name="calendar-outline"></ion-icon> ${exp.period}</span>
-          <span class="timeline-location"><ion-icon name="location-outline"></ion-icon> ${exp.location}</span>
-        </div>
+  container.innerHTML = PORTFOLIO_DATA.experiences.map(exp => `
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">${exp.role}</h4>
+      <div class="timeline-item-company">${exp.company} • (${exp.period})</div>
+      <p class="timeline-text">${exp.summary}</p>
+      <div class="tech-tags" style="margin-top: 8px;">
+        ${exp.skills.map(s => `<span class="tech-tag">${s}</span>`).join('')}
       </div>
-      <p class="timeline-summary">${exp.summary}</p>
-      <ul class="timeline-achievements">
-        ${exp.achievements.map(ach => `<li><ion-icon name="checkmark-circle-outline"></ion-icon> ${ach}</li>`).join('')}
-      </ul>
-      <div class="tech-tags">
-        ${exp.skills.map(sk => `<span class="tech-tag">${sk}</span>`).join('')}
+    </li>
+  `).join('');
+}
+
+// Render Skills Matrix with Progress Bars
+function renderSkills() {
+  const container = document.getElementById('skills-matrix-container');
+  if (!container || !window.PORTFOLIO_DATA) return;
+
+  const s = PORTFOLIO_DATA.skills;
+  const allSkills = [
+    ...s.languages.map(x => ({ ...x, cat: "Languages" })),
+    ...s.mlAndAi.map(x => ({ ...x, cat: "Machine Learning" })),
+    ...s.dataEngineering.map(x => ({ ...x, cat: "Data Engineering" })),
+    ...s.cloudAndTools.map(x => ({ ...x, cat: "Cloud & MLOps" }))
+  ];
+
+  container.innerHTML = allSkills.map(sk => `
+    <div class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="skill-title">${sk.name}</h5>
+        <data value="${sk.level}" class="skill-pct">${sk.level}%</data>
+      </div>
+      <div class="skill-bar-bg">
+        <div class="skill-bar-fill" data-level="${sk.level}%"></div>
       </div>
     </div>
   `).join('');
 }
 
-// Render Filterable Projects
+function animateSkillBars() {
+  const fills = document.querySelectorAll('.skill-bar-fill');
+  fills.forEach(fill => {
+    fill.style.width = fill.getAttribute('data-level');
+  });
+}
+
+// Render Projects Grid
 function renderProjects(filter = 'all') {
   const container = document.getElementById('projects-grid');
-  if (!container) return;
+  if (!container || !window.PORTFOLIO_DATA) return;
 
-  const filtered = filter === 'all' 
-    ? PORTFOLIO_DATA.projects 
+  const filtered = filter === 'all'
+    ? PORTFOLIO_DATA.projects
     : PORTFOLIO_DATA.projects.filter(p => p.category === filter);
 
   container.innerHTML = filtered.map(proj => `
-    <div class="project-card glass-card reveal" data-category="${proj.category}">
-      <div class="project-header">
-        <span class="project-category-badge">${proj.categoryName}</span>
-        <div class="project-links">
-          <a href="${proj.github}" target="_blank" rel="noopener" title="GitHub Repo" class="icon-link">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
+    <li class="project-item">
+      <div class="project-card">
+        <div>
+          <div class="project-category">${proj.categoryName}</div>
+          <h3 class="project-title">${proj.title}</h3>
+          <p class="project-desc">${proj.description}</p>
+        </div>
+        <div class="tech-tags">
+          ${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
       </div>
-      <h3 class="project-title">${proj.title}</h3>
-      <p class="project-desc">${proj.description}</p>
-      <ul class="project-highlights">
-        ${proj.highlights.slice(0, 2).map(h => `<li><ion-icon name="chevron-forward-outline"></ion-icon> ${h}</li>`).join('')}
-      </ul>
-      <div class="tech-tags">
-        ${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-      </div>
-    </div>
+    </li>
   `).join('');
 }
 
-// Render Skills Matrix
-function renderSkills() {
-  const s = PORTFOLIO_DATA.skills;
-  
-  // Render Skill Bars / Cards
-  renderSkillGroup('skills-lang', s.languages);
-  renderSkillGroup('skills-ml', s.mlAndAi);
-  renderSkillGroup('skills-de', s.dataEngineering);
-  renderSkillGroup('skills-cloud', s.cloudAndTools);
-}
-
-function renderSkillGroup(elementId, items) {
-  const container = document.getElementById(elementId);
-  if (!container) return;
-
-  container.innerHTML = items.map(sk => `
-    <div class="skill-item">
-      <div class="skill-info">
-        <span class="skill-name">${sk.name}</span>
-        <span class="skill-pct">${sk.level}%</span>
-      </div>
-      <div class="skill-bar-bg">
-        <div class="skill-bar-fill" style="width: 0%;" data-level="${sk.level}%"></div>
-      </div>
-    </div>
-  `).join('');
-}
-
-// Bind Category Filter Buttons
-function bindProjectFilters() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+// Filter Buttons
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-item button');
   filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', function () {
       filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const category = btn.getAttribute('data-filter');
-      renderProjects(category);
+      this.classList.add('active');
+      const cat = this.getAttribute('data-filter');
+      renderProjects(cat);
     });
   });
 }
 
-// Theme Toggle Engine
-function bindThemeToggle() {
-  const toggleBtn = document.getElementById('theme-toggle-btn');
-  if (!toggleBtn) return;
+// Contact Form Submission Handler
+function initContactForm() {
+  const form = document.querySelector('[data-form]');
+  if (!form) return;
 
-  // Check stored theme preference
-  const savedTheme = localStorage.getItem('jeevan_portfolio_theme');
-  if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-    updateThemeIcon(true);
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    const isLight = document.body.classList.toggle('light-theme');
-    localStorage.setItem('jeevan_portfolio_theme', isLight ? 'light' : 'dark');
-    updateThemeIcon(isLight);
-    if (window.dataCanvas) window.dataCanvas.init();
-    if (window.mlSim) window.mlSim.render();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('[data-form-btn]');
+    if (btn) {
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<ion-icon name="checkmark-circle-outline"></ion-icon> Message Sent!`;
+      form.reset();
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 3000);
+    }
   });
-}
-
-function updateThemeIcon(isLight) {
-  const icon = document.querySelector('#theme-toggle-btn ion-icon');
-  if (icon) {
-    icon.setAttribute('name', isLight ? 'moon-outline' : 'sunny-outline');
-  }
-}
-
-// Contact Form & Quick Email Copy
-function bindContactForm() {
-  const copyBtn = document.getElementById('copy-email-btn');
-  if (copyBtn) {
-    copyBtn.addEventListener('click', () => {
-      const email = PORTFOLIO_DATA.profile.email;
-      navigator.clipboard.writeText(email).then(() => {
-        const originalText = copyBtn.innerHTML;
-        copyBtn.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon> Copied!`;
-        copyBtn.classList.add('copied');
-        setTimeout(() => {
-          copyBtn.innerHTML = originalText;
-          copyBtn.classList.remove('copied');
-        }, 2500);
-      });
-    });
-  }
-}
-
-// Intersection Observer for Reveal Animations & Skill Bars Fill
-function initScrollAnimations() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        
-        // Trigger skill bars animation if inside
-        const skillFills = entry.target.querySelectorAll('.skill-bar-fill');
-        skillFills.forEach(fill => {
-          fill.style.width = fill.getAttribute('data-level');
-        });
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal, .skill-group-card').forEach(el => observer.observe(el));
-}
-
-// Metric Count-Up Animation
-function initMetricCounters() {
-  const metricsSection = document.getElementById('metrics-grid');
-  if (!metricsSection) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        document.querySelectorAll('.metric-value').forEach(counter => {
-          const target = parseFloat(counter.getAttribute('data-target'));
-          const duration = 1800; // ms
-          const start = 0;
-          const startTime = performance.now();
-
-          function updateCounter(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease out quad
-            const currentVal = start + (target - start) * (1 - (1 - progress) * (1 - progress));
-            
-            counter.textContent = target % 1 === 0 ? Math.floor(currentVal) : currentVal.toFixed(1);
-
-            if (progress < 1) {
-              requestAnimationFrame(updateCounter);
-            } else {
-              counter.textContent = target;
-            }
-          }
-
-          requestAnimationFrame(updateCounter);
-        });
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  observer.observe(metricsSection);
-}
-
-// Utility Helpers
-function setTextContent(id, val) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = val;
-}
-
-function setHref(id, val) {
-  const el = document.getElementById(id);
-  if (el) el.setAttribute('href', val);
 }
