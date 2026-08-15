@@ -31,7 +31,7 @@
     <aside class="sidebar liquid-glass" data-sidebar>
       <div class="sidebar-info">
         <figure class="avatar-box">
-          <img src="./favicon.ico" alt="Jeevan Paila" width="80">
+          <img src="./favicon.ico" alt="Jeevan Paila" width="140" height="140">
         </figure>
 
         <div class="info-content">
@@ -55,7 +55,12 @@
             </div>
             <div class="contact-info">
               <p class="contact-title">Email</p>
-              <a href="mailto:jeevandeep.paila@gmail.com" class="contact-link">jeevandeep.paila@gmail.com</a>
+              <div id="email-container">
+                <span id="email-display" class="contact-link" style="color: var(--text-muted);">jeev*****@gmail.com</span>
+                <button class="unlock-badge" data-open-modal style="margin-top: 2px;">
+                  <ion-icon name="lock-closed-outline"></ion-icon> Unlock Access
+                </button>
+              </div>
             </div>
           </li>
 
@@ -65,7 +70,12 @@
             </div>
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-              <a href="tel:+919559554884" class="contact-link">+91 (955) 955-4884</a>
+              <div id="phone-container">
+                <span id="phone-display" class="contact-link" style="color: var(--text-muted);">+91 955*****84</span>
+                <button class="unlock-badge" data-open-modal style="margin-top: 2px;">
+                  <ion-icon name="lock-closed-outline"></ion-icon> Unlock Access
+                </button>
+              </div>
             </div>
           </li>
 
@@ -352,6 +362,51 @@
     </div>
 
   </main>
+
+  <!-- Anti-Bot Contact Access Modal -->
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-card liquid-glass">
+      <button id="modal-close-btn" class="modal-close-btn" aria-label="Close Modal">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-header">
+        <div class="icon-box" style="margin: 0 auto 12px; color: var(--gold-accent); width: 44px; height: 44px;">
+          <ion-icon name="shield-checkmark-outline"></ion-icon>
+        </div>
+        <h3 class="h3" style="text-align: center; color: var(--text-primary); font-size: var(--fs-3);">Unlock Direct Contact Access</h3>
+        <p style="font-size: var(--fs-6); color: var(--text-muted); text-align: center; margin-top: 6px; line-height: 1.5;">
+          To prevent automated scraping bots &amp; spam, please verify your details below to instantly unlock Jeevan Paila's direct email and phone number.
+        </p>
+      </div>
+
+      <form id="access-form" style="margin-top: 20px;">
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: var(--fs-7); color: var(--text-muted); display: block; margin-bottom: 4px;">Your Name *</label>
+          <input type="text" id="access-name" class="form-input" placeholder="e.g. Sarah Jenkins" required style="padding: 10px 14px; font-size: 13px;">
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: var(--fs-7); color: var(--text-muted); display: block; margin-bottom: 4px;">Your Email / Phone *</label>
+          <input type="text" id="access-contact" class="form-input" placeholder="e.g. sarah@company.com" required style="padding: 10px 14px; font-size: 13px;">
+        </div>
+
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: var(--fs-7); color: var(--text-muted); display: block; margin-bottom: 4px;">Purpose / Company *</label>
+          <input type="text" id="access-purpose" class="form-input" placeholder="e.g. Data Integration Hiring / Consultation" required style="padding: 10px 14px; font-size: 13px;">
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="font-size: var(--fs-7); color: var(--gold-accent); display: block; margin-bottom: 4px;">Human Challenge: What is <strong id="c-n1">6</strong> + <strong id="c-n2">7</strong>? *</label>
+          <input type="number" id="c-ans" class="form-input" placeholder="Enter sum" required style="padding: 10px 14px; font-size: 13px;">
+        </div>
+
+        <button type="submit" class="glass-btn primary-hire-btn" style="width: 100%; font-size: 14px; padding: 12px;">
+          <ion-icon name="lock-open-outline"></ion-icon> Verify &amp; Unlock Details
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Application Scripts -->
   <script src="./js/data.js"></script>

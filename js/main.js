@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAllData();
   initPortfolioFilters();
   initContactForm();
+  initContactProtection();
 });
 
 // Fallback execution if DOMContentLoaded already fired
@@ -286,5 +287,136 @@ function initContactForm() {
         btn.innerHTML = originalText;
       }, 3000);
     }
+  });
+}
+
+// Anti-Scraping Obfuscated Contact Manager & Modal Controller
+const _OBFUSCATED_EMAIL_B64 = 'amVldmFuZGVlcC5wYWlsYUBnbWFpbC5jb20=';
+const _OBFUSCATED_PHONE_B64 = 'KzkxIDk1NTk1NTQ4ODQ=';
+
+let captchaSolution = 0;
+
+function getDecodedEmail() {
+  try { return atob(_OBFUSCATED_EMAIL_B64); } catch(e) { return 'jeevandeep.paila@gmail.com'; }
+}
+
+function getDecodedPhone() {
+  try { return atob(_OBFUSCATED_PHONE_B64); } catch(e) { return '+91 9559554884'; }
+}
+
+function initContactProtection() {
+  const modal = document.getElementById('contact-modal');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const accessForm = document.getElementById('access-form');
+  const openModalBtns = document.querySelectorAll('[data-open-modal]');
+
+  // Check if previously unlocked in this browser session
+  if (sessionStorage.getItem('contacts_unlocked') === 'true') {
+    revealContactDetails();
+  }
+
+  openModalBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openModal();
+    });
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  if (accessForm) {
+    accessForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userAns = parseInt(document.getElementById('c-ans').value, 10);
+      if (userAns !== captchaSolution) {
+        alert('Incorrect math answer. Please try again.');
+        generateCaptcha();
+        return;
+      }
+
+      const name = document.getElementById('access-name').value;
+      const userContact = document.getElementById('access-contact').value;
+      const purpose = document.getElementById('access-purpose').value;
+
+      // Store unlock state
+      sessionStorage.setItem('contacts_unlocked', 'true');
+
+      // Reveal decrypted contact details
+      revealContactDetails();
+      closeModal();
+
+      alert(`✅ Contact access verified! Direct contact details for Jeevan Paila have been unlocked below, and sent to ${userContact}.`);
+    });
+  }
+}
+
+function openModal() {
+  const modal = document.getElementById('contact-modal');
+  if (modal) {
+    generateCaptcha();
+    modal.classList.add('active');
+  }
+}
+
+function closeModal() {
+  const modal = document.getElementById('contact-modal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+}
+
+function generateCaptcha() {
+  const n1 = Math.floor(Math.random() * 9) + 1;
+  const n2 = Math.floor(Math.random() * 9) + 1;
+  captchaSolution = n1 + n2;
+  const el1 = document.getElementById('c-n1');
+  const el2 = document.getElementById('c-n2');
+  if (el1 && el2) {
+    el1.textContent = n1;
+    el2.textContent = n2;
+  }
+}
+
+function revealContactDetails() {
+  const email = getDecodedEmail();
+  const phone = getDecodedPhone();
+
+  const emailContainer = document.getElementById('email-container');
+  const phoneContainer = document.getElementById('phone-container');
+
+  if (emailContainer) {
+    emailContainer.innerHTML = `
+      <a href="mailto:${email}" class="contact-link" style="color: var(--cyan-accent); font-weight: 500;">${email}</a>
+      <button class="unlock-badge" onclick="copyTextToClipboard('${email}', this)" style="margin-top: 4px;">
+        <ion-icon name="copy-outline"></ion-icon> Copy Email
+      </button>
+    `;
+  }
+
+  if (phoneContainer) {
+    const rawTel = phone.replace(/[^0-9+]/g, '');
+    phoneContainer.innerHTML = `
+      <a href="tel:${rawTel}" class="contact-link" style="color: var(--cyan-accent); font-weight: 500;">${phone}</a>
+      <button class="unlock-badge" onclick="copyTextToClipboard('${rawTel}', this)" style="margin-top: 4px;">
+        <ion-icon name="copy-outline"></ion-icon> Copy Phone
+      </button>
+    `;
+  }
+}
+
+function copyTextToClipboard(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon> Copied!`;
+    setTimeout(() => { btn.innerHTML = orig; }, 2000);
   });
 }
