@@ -280,11 +280,27 @@ main {
   border-radius: 12px;
   max-width: 95%;
   width: max-content;
-  white-space: normal;
+  white-space: nowrap;
   text-align: center;
-  line-height: 1.4;
   margin: 0 auto;
-  word-break: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 34px;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--cyan-accent);
+  font-weight: 700;
+  animation: blinkCursor 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @media (max-width: 1024px) {

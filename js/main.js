@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initContactForm();
   initContactProtection();
+  initTypewriter();
 });
 
 // Fallback execution if DOMContentLoaded already fired
@@ -463,4 +464,51 @@ function copyTextToClipboard(text, btn) {
     btn.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon> Copied!`;
     setTimeout(() => { btn.innerHTML = orig; }, 2000);
   });
+}
+
+// Dynamic Code Typewriter Animation for Sidebar Titles
+function initTypewriter() {
+  const textEl = document.querySelector('.typewriter-text');
+  if (!textEl) return;
+
+  const titles = [
+    "Data Integration Specialist",
+    "Ex-Amazon Automation Analyst",
+    "Data Engineer",
+    "Data Scientist"
+  ];
+
+  let titleIndex = 0;
+  let charIndex = titles[0].length;
+  let isDeleting = false;
+  let typingSpeed = 80;    // ms per character typed
+  let deletingSpeed = 40;  // ms per character deleted
+  let delayAfterTyped = 2200; // ms to pause on completed title
+
+  function typeStep() {
+    const currentTitle = titles[titleIndex];
+
+    if (isDeleting) {
+      charIndex--;
+      textEl.textContent = currentTitle.substring(0, charIndex);
+    } else {
+      charIndex++;
+      textEl.textContent = currentTitle.substring(0, charIndex);
+    }
+
+    let nextSpeed = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && charIndex === currentTitle.length) {
+      nextSpeed = delayAfterTyped;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      titleIndex = (titleIndex + 1) % titles.length;
+      nextSpeed = 300;
+    }
+
+    setTimeout(typeStep, nextSpeed);
+  }
+
+  setTimeout(typeStep, delayAfterTyped);
 }
