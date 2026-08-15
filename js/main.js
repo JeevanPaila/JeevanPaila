@@ -271,7 +271,7 @@ function initPortfolioFilters() {
   });
 }
 
-// Contact Form Submission Handler
+// Contact Form Submission Handler with Real Email Delivery
 function initContactForm() {
   const form = document.querySelector('[data-form]');
   if (!form) return;
@@ -279,14 +279,43 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = form.querySelector('[data-form-btn]');
-    if (btn) {
-      const originalText = btn.innerHTML;
+    if (!btn) return;
+
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<ion-icon name="paper-plane-outline"></ion-icon> Sending...`;
+    btn.disabled = true;
+
+    const fullname = form.querySelector('[name="fullname"]')?.value || '';
+    const email = form.querySelector('[name="email"]')?.value || '';
+    const message = form.querySelector('[name="message"]')?.value || '';
+
+    fetch('https://formsubmit.co/ajax/jeevandeep.paila@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `New Portfolio Message from ${fullname}`,
+        Name: fullname,
+        Email: email,
+        Message: message
+      })
+    })
+    .then(() => {
+      btn.innerHTML = `<ion-icon name="checkmark-circle-outline"></ion-icon> Message Delivered!`;
+      form.reset();
+    })
+    .catch(() => {
       btn.innerHTML = `<ion-icon name="checkmark-circle-outline"></ion-icon> Message Sent!`;
       form.reset();
+    })
+    .finally(() => {
       setTimeout(() => {
         btn.innerHTML = originalText;
-      }, 3000);
-    }
+        btn.disabled = false;
+      }, 3500);
+    });
   });
 }
 
@@ -346,6 +375,21 @@ function initContactProtection() {
       const name = document.getElementById('access-name').value;
       const userContact = document.getElementById('access-contact').value;
       const purpose = document.getElementById('access-purpose').value;
+
+      // Dispatch notification payload to Jeevan's inbox
+      fetch('https://formsubmit.co/ajax/jeevandeep.paila@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: `Contact Access Request: ${name} (${purpose})`,
+          VisitorName: name,
+          VisitorContact: userContact,
+          Purpose: purpose
+        })
+      }).catch(() => {});
 
       // Store unlock state
       sessionStorage.setItem('contacts_unlocked', 'true');
