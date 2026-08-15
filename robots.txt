@@ -1,0 +1,35 @@
+# Allow all search engines and AI web crawlers
+User-agent: *
+Allow: /
+
+# Explicitly allow AI Search & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://jeevanpaila.web.app/sitemap.xml
+Sitemap: https://jeevanpaila.com/sitemap.xml
