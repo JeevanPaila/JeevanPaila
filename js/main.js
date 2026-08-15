@@ -27,6 +27,7 @@ function renderAllData() {
   renderCertifications();
   renderSkills();
   renderProjects('all');
+  renderVentures();
 }
 
 // Dynamic Edge Border Spotlight following cursor direction
@@ -213,12 +214,47 @@ function renderProjects(filter = 'all') {
           <h3 class="project-title">${proj.title}</h3>
           <p class="project-desc">${proj.description}</p>
         </div>
-        <div class="tech-tags">
-          ${proj.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
         </div>
       </div>
     </li>
   `).join('');
+}
+
+// Render Ventures Studio Grid
+function renderVentures() {
+  const container = document.getElementById('ventures-grid');
+  const data = getPortfolioData();
+  if (!container || !data || !data.ventures) return;
+
+  container.innerHTML = data.ventures.map(v => {
+    const isLive = v.status === 'live';
+    const statusBadge = isLive
+      ? `<span class="status-badge live"><span class="status-dot"></span> Live Product</span>`
+      : `<span class="status-badge dev"><span class="status-dot"></span> ${v.statusLabel}</span>`;
+
+    const actionBtn = isLive
+      ? `<a href="${v.url}" target="_blank" rel="noopener" class="glass-btn primary-hire-btn" style="margin-top: 15px;">
+           <span>Visit ${v.domain}</span> <ion-icon name="open-outline"></ion-icon>
+         </a>`
+      : `<button class="glass-btn" disabled style="margin-top: 15px; opacity: 0.65; cursor: not-allowed;">
+           <span>${v.statusLabel}</span> <ion-icon name="time-outline"></ion-icon>
+         </button>`;
+
+    return `
+      <div class="venture-card liquid-glass">
+        <div class="venture-header">
+          <h3 class="venture-title">${v.name}</h3>
+          ${statusBadge}
+        </div>
+        <p class="venture-tagline">${v.tagline}</p>
+        <p class="venture-desc">${v.description}</p>
+        <div class="tech-tags" style="margin-top: 12px;">
+          ${v.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
+        </div>
+        ${actionBtn}
+      </div>
+    `;
+  }).join('');
 }
 
 // Filter Buttons

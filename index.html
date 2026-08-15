@@ -137,7 +137,7 @@
             <button class="navbar-link" data-nav-link="portfolio">Portfolio</button>
           </li>
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link="datalab">Data Lab</button>
+            <button class="navbar-link" data-nav-link="ventures">Ventures</button>
           </li>
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link="contact">Contact</button>
@@ -296,86 +296,18 @@
         </section>
       </article>
 
-      <!-- #DATA LAB TAB -->
-      <article class="datalab" data-page="datalab">
+      <!-- #VENTURES TAB -->
+      <article class="ventures" data-page="ventures">
         <header>
-          <h2 class="h2 article-title">Interactive Data Lab</h2>
+          <h2 class="h2 article-title">Ventures &amp; Products</h2>
         </header>
 
-        <section class="datalab-container">
-          <!-- ML Model Simulator Box -->
-          <div class="sim-box liquid-glass">
-            <h3 style="color: var(--text-primary); font-size: var(--fs-3);"><ion-icon name="analytics-outline" style="color: var(--cyan-accent); display: inline-block; margin-right: 6px;"></ion-icon> Model Fitting Simulator</h3>
-            <p style="font-size: var(--fs-6); color: var(--text-muted); margin-top: 5px;">
-              Adjust hyperparameters in real-time to watch gradient descent fit linear regression parameters over synthetic data points.
-            </p>
-            <div class="sim-canvas-wrapper">
-              <canvas id="sim-canvas"></canvas>
-            </div>
-            <div class="sim-metrics-bar">
-              <div>MSE: <strong id="sim-mse">0.0000</strong></div>
-              <div>R² Score: <strong id="sim-r2">0%</strong></div>
-              <div>Slope: <strong id="sim-slope">0.000</strong></div>
-            </div>
-            <div class="sim-controls">
-              <div class="control-group">
-                <label>Learning Rate (α): <span id="sim-lr-val">0.05</span></label>
-                <input type="range" id="sim-lr-input" min="0.01" max="0.3" step="0.01" value="0.05">
-              </div>
-              <div class="control-group">
-                <label>Data Points (N): <span id="sim-pts-val">35</span></label>
-                <input type="range" id="sim-pts-input" min="15" max="80" step="5" value="35">
-              </div>
-              <div class="control-group">
-                <label>Epochs: <span id="sim-epochs-val">50</span></label>
-                <input type="range" id="sim-epochs-input" min="10" max="150" step="10" value="50">
-              </div>
-              <button id="sim-reset-btn" class="glass-btn" style="padding: 8px 16px; font-size: 12px; width: max-content; align-self: flex-end; margin-top: 8px;">
-                <ion-icon name="refresh-outline"></ion-icon> Resample Points
-              </button>
-            </div>
-          </div>
+        <section class="ventures-section">
+          <p style="color: var(--text-muted); font-size: var(--fs-5); margin-bottom: 25px;">
+            A showcase of enterprise AI platforms, price intelligence systems, and digital ventures engineered by Jeevan Paila.
+          </p>
 
-          <!-- Interactive Data Pipeline Visualizer -->
-          <div class="sim-box liquid-glass">
-            <h3 style="color: var(--text-primary); font-size: var(--fs-3);"><ion-icon name="git-network-outline" style="color: var(--cyan-accent); display: inline-block; margin-right: 6px;"></ion-icon> Enterprise Data Pipeline Flow</h3>
-            <p style="font-size: var(--fs-6); color: var(--text-muted); margin-top: 5px;">
-              Click any stage below to inspect architectural specifications and data governance policies.
-            </p>
-
-            <div class="pipeline-steps">
-              <div class="pipeline-step liquid-glass active" data-step="ingestion">
-                <span>1. Data Ingestion &amp; Streaming</span>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </div>
-              <div class="pipeline-step liquid-glass" data-step="transformation">
-                <span>2. PySpark ETL &amp; Delta Lake</span>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </div>
-              <div class="pipeline-step liquid-glass" data-step="featurestore">
-                <span>3. ML Feature Store &amp; Governance</span>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </div>
-              <div class="pipeline-step liquid-glass" data-step="inference">
-                <span>4. Real-Time Model Inference</span>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </div>
-              <div class="pipeline-step liquid-glass" data-step="analytics">
-                <span>5. Dashboards &amp; BI Actions</span>
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </div>
-            </div>
-
-            <div class="pipeline-detail-card">
-              <h4 id="pipeline-detail-title" style="color: var(--text-primary); font-size: var(--fs-4);">1. Data Ingestion &amp; Streaming Layer</h4>
-              <p id="pipeline-detail-desc" style="font-size: var(--fs-6); color: var(--text-secondary); margin-top: 5px;">
-                Connects multi-cloud REST APIs, PostgreSQL DB replicas, Kafka streams, and IoT event logs into raw Bronze storage tables.
-              </p>
-              <div id="pipeline-detail-metrics" style="font-family: var(--ff-mono); font-size: var(--fs-7); color: var(--cyan-accent); margin-top: 8px;">
-                • Latency: &lt;100ms | Speed: 50,000 events/sec | Format: Parquet &amp; JSON
-              </div>
-            </div>
-          </div>
+          <div id="ventures-grid" class="ventures-grid"></div>
         </section>
       </article>
 
@@ -411,7 +343,6 @@
 
   <!-- Application Scripts -->
   <script src="./js/data.js"></script>
-  <script src="./js/playground.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>

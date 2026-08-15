@@ -207,7 +207,54 @@ const PORTFOLIO_DATA = {
       { name: "Jira & Agile / Scrum", level: 90 },
       { name: "Git & Web Scraping Tools", level: 92 }
     ]
-  }
+  },
+
+  ventures: [
+    {
+      id: "v-1",
+      name: "Kognitec",
+      domain: "kognitec.com",
+      url: "https://kognitec.com",
+      status: "live",
+      statusLabel: "Live Product",
+      tagline: "Enterprise AI, Data Integration & Intelligent Automation Solutions",
+      description: "Architecting distributed cloud data pipelines, automated ETL workflows, custom generative AI integrations, and real-time decision engines for digital transformation.",
+      tech: ["Enterprise AI", "Data Integration", "PySpark", "Databricks", "Cloud Architecture"]
+    },
+    {
+      id: "v-2",
+      name: "Unboxful",
+      domain: "unboxful.com",
+      url: "#",
+      status: "dev",
+      statusLabel: "In Development",
+      tagline: "Next-Gen E-Commerce Product Discovery & Price Tracking",
+      description: "Smart consumer product discovery and competitive price intelligence engine tracking deals, price histories, and unboxing reviews across major retail platforms.",
+      tech: ["E-Commerce Analytics", "Price Scraping", "Retail Intelligence", "Next.js"]
+    },
+    {
+      id: "v-3",
+      name: "IndiWize",
+      domain: "indiwize.com",
+      url: "#",
+      status: "dev",
+      statusLabel: "In Development",
+      tagline: "AI-Powered Knowledge & Market Intelligence for India",
+      description: "Hyper-localized data analytics platform aggregating financial indicators, regional trend models, and market intelligence for Indian growth ecosystems.",
+      tech: ["Market Intelligence", "Financial Analytics", "NLP", "Python"]
+    },
+    {
+      id: "v-4",
+      name: "HustleBase",
+      domain: "hustlebase.com",
+      url: "#",
+      status: "stealth",
+      statusLabel: "Building in Stealth",
+      tagline: "All-in-One OS for Creators, Solopreneurs & Freelancers",
+      description: "Workspace productivity suite and workflow automation engine empowering independent creators and data consultants to run operations seamlessly.",
+      tech: ["Workflow Automation", "SaaS", "Productivity OS", "FullStack"]
+    }
+  ]
 };
 
 if (typeof window !== 'undefined') {
