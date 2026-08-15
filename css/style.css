@@ -386,6 +386,15 @@ main {
   text-overflow: ellipsis;
 }
 
+.contact-info address {
+  font-style: normal;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
 .contact-info a:hover { color: var(--cyan-accent); }
 
 .social-list {
