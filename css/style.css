@@ -275,14 +275,24 @@ main {
   border: 1px solid var(--badge-border);
   font-size: var(--fs-7);
   font-weight: 500;
-  padding: 5px 14px;
+  padding: 6px 12px;
   border-radius: 12px;
+  max-width: 90%;
   width: max-content;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.4;
   margin: 0 auto;
+  word-break: break-word;
 }
 
 @media (max-width: 1024px) {
-  .info-content .title { margin: 0; }
+  .info-content .title {
+    margin: 0 auto;
+    font-size: 11px;
+    padding: 5px 10px;
+    max-width: 100%;
+  }
 }
 
 .info_more-btn {
