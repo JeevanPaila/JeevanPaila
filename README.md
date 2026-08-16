@@ -2,7 +2,7 @@
 
 ### Data Integration Specialist | Ex-Amazon Automation Analyst & Pricing Analyst | IISc Postgraduate Alumnus | Founder of [Kognitec](https://kognitec.com)
 
-[![Website](https://img.shields.io/badge/Portfolio-jeevanpaila.web.app-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jeevanpaila.web.app)
+[![Website](https://img.shields.io/badge/Portfolio-jeevanpaila.com-6366F1?style=for-the-badge&logo=googlechrome&logoColor=white)](https://jeevanpaila.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jeevanpaila-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeevanpaila/)
 [![Twitter / X](https://img.shields.io/badge/Twitter-jdpaila-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/jdpaila)
 [![Kognitec](https://img.shields.io/badge/Kognitec-Live_Product_Suite-10B981?style=for-the-badge&logo=rocket&logoColor=white)](https://kognitec.com)
@@ -63,7 +63,7 @@
 
 ## 📫 Connect with Me
 
-- 🖥 **Personal Portfolio**: **[https://jeevanpaila.web.app](https://jeevanpaila.web.app)**
+- 🖥 **Personal Portfolio**: **[https://jeevanpaila.com](https://jeevanpaila.com)**
 - 👔 **LinkedIn**: **[linkedin.com/in/jeevanpaila](https://www.linkedin.com/in/jeevanpaila/)**
 - 🐦 **Twitter / X**: **[x.com/jdpaila](https://x.com/jdpaila)**
 - 🚀 **AI Product Suite**: **[kognitec.com](https://kognitec.com)**
